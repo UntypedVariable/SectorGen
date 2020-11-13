@@ -1,0 +1,4 @@
+**/nppBackup/**
+**/__pycache__/**
+**.pyc
+**.bak
