@@ -1,0 +1,66 @@
+COLORS:
+  green         = Non-Hazardous
+  blue          = High Tech
+  brown         = Uninhabited
+  green brown   = Bad Starport
+  red           = No Fuel
+  black         = Void
+
+SYMBOLS:
+  Warn Triangle = Hazardous
+  Jupiter       = Jovians Present
+  Gas Station   = Unrefined Fuel
+  Gas Station+  = Refined Fuel
+
+PBJ:
+  Planets
+  Belts
+  Jovians
+
+COG:
+  [Travel Code]
+  Climate
+  Orbit
+  Gravity
+
+WIDTT:
+  Weapons
+  Information
+  Drugs
+  Technology
+  Travellers
+  Powers (Psychic)
+
+=============================
+
+VN (Vanilla Traveller) [mongoose 2e]
+  planet quirk occurs at 15% incidence
+
+HS (Hard Sci-Fi)
+  planets of size <= 2 and 10:
+    reduce population roll by 1
+  planets of atmo 5, 6 and 8:
+    increase population roll by 1
+    OTHERWISE reduce population roll by 1
+  add population to Port Quality and subtract 7
+  planet quirk occurs at 0% incidence
+
+SO (Space Opera)
+  planets of size 4 or less:
+    size <= 2: atmo = 0
+    atmo <= 2: atmo = 0
+    atmo <= 5: atmo = 1
+    atmo >= 6: atmo = 10
+  planets of size 3 or 4 and atmo 10:
+    reduce hydro roll by 6
+  planets with atmo >= 1:
+    reduce hydro roll by 6
+  planets with atmo 2, 3, 11 or 12:
+    reduce hydro roll by 4
+  planet quirk occurs at 35% incidence
+
+BA (Barren) [used for uninhabited worlds]
+  population  = 0
+  government  = 0
+  law level   = 0
+  tech level  = 0

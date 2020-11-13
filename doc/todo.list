@@ -1,0 +1,72 @@
+#################
+
+GENERAL
+
+  LEGEND
+    isolate HardScifi and SpaceOpera settings in planetgen/systemgen/star/etc
+	
+  SYSTEM GEN / HEX
+    add name slot for hexes [done]
+    mainworld-generation
+      comment slot
+      name slot
+    migrate PBJ-sequence to system
+  
+  SECTOR GEN
+    subsector capital
+    Trade Routes (within j-1 or j-2 of each other)
+      Industrial    Asteroid
+      High Tech     Desert
+                    Ice-Capped
+                    Non-Industrial
+            ----    ----
+      High Pop		  Agricultural
+      Rich			    Garden
+                    Water World
+
+#################
+
+BUGS
+  INSPECTOR
+    says "Rogue World" but the orbit band is (M) for medium
+      seems to be affecting the temperature, too
+
+#################
+
+DRAW
+	System Diagram
+	
+
+#################
+
+
+far plan:
+	planet maps / world maps
+	--> what kind of projection
+	--> also hexes
+  
+#################
+#################
+
+OLD 
+
+	main drawing script
+		add name slot for hexes
+		~~add Legend to explain colors~~
+		add hex explanation
+		add command explanation on how to inspect a hex
+		###
+		map variants: trade codes, political
+	
+	Jump Routes
+		J-1 routes have a starport D+ or Gas giant in every hex
+		J-2 as J-1 routes, but in every other hex
+		--->may add fuel dumps/stations for particularly valuable routes
+		    -->add fuel dump and fuel station icon!
+
+	Inspector
+	--->
+		after system generation is done
+		amend Inspector to display an extended system profile
+		ex: !t inspect(1010,24)
+			--> inspects hex 1010 at orbit 24

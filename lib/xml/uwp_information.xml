@@ -1,0 +1,1299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traveller>
+	<starport>
+		<starport level="X">
+			<quality>No Starport</quality>
+			<berthing>0</berthing>
+			<fuel>None</fuel>
+			<facilities>None</facilities>
+		</starport>
+		<starport level="E">
+			<quality>Frontier</quality>
+			<berthing>0</berthing>
+			<fuel>None</fuel>
+			<facilities>None</facilities>
+		</starport>
+		<starport level="D">
+			<quality>Poor</quality>
+			<berthing>1D x Cr10</berthing>
+			<fuel>Unrefined</fuel>
+			<facilities>Limited Repair</facilities>
+		</starport>
+		<starport level="C">
+			<quality>Routine</quality>
+			<berthing>1D x Cr100</berthing>
+			<fuel>Unrefined</fuel>
+			<facilities>Shipyard (&lt; 200 dt), Repair</facilities>
+		</starport>
+		<starport level="B">
+			<quality>Good</quality>
+			<berthing>1D x Cr500</berthing>
+			<fuel>Refined</fuel>
+			<facilities>Shipyard (&lt; 20 Kdt), Repair</facilities>
+		</starport>
+		<starport level="A">
+			<quality>Excellent</quality>
+			<berthing>1D x Cr1000</berthing>
+			<fuel>Refined</fuel>
+			<facilities>Shipyard (all) Repair</facilities>
+		</starport>
+	</starport>
+	<size>
+		<size level="0">
+			<type>Asteroid/Planetary Belt (...around a star)</type>
+			<diameter>Multiple &lt; 200 Km objects</diameter>
+			<working_diam>200</working_diam>
+		</size>
+		<size level="D">
+			<type>Debris</type>
+			<diameter>1+ &lt; 200 Km objects</diameter>
+			<working_diam>200</working_diam>
+		</size>
+		<size level="R">
+			<type>Asteroid/Planetary Ring (...around a world)</type>
+			<diameter>Multiple &lt; 1 Km objects</diameter>
+			<working_diam>1</working_diam>
+		</size>
+		<size level="S">
+			<type>Very Small</type>
+			<diameter>200-799 Km</diameter>
+			<working_diam>600</working_diam>
+		</size>
+		<size level="1">
+			<type>Small</type>
+			<diameter>800-2399 Km</diameter>
+			<working_diam>1600</working_diam>
+		</size>
+		<size level="2">
+			<type>Small (e.g. Luna)</type>
+			<diameter>2,400-3,999 Km</diameter>
+			<working_diam>3350</working_diam>
+		</size>
+		<size level="3">
+			<type>Small (e.g. Mercury)</type>
+			<diameter>4,000-5,599 Km</diameter>
+			<working_diam>4750</working_diam>
+		</size>
+		<size level="4">
+			<type>Small (e.g. Mars)</type>
+			<diameter>5,600-7,199 Km</diameter>
+			<working_diam>6800</working_diam>
+		</size>
+		<size level="5">
+			<type>Medium</type>
+			<diameter>7,200-8,799 Km</diameter>
+			<working_diam>8000</working_diam>
+		</size>
+		<size level="6">
+			<type>Medium</type>
+			<diameter>8,800-10,399 Km</diameter>
+			<working_diam>10000</working_diam>
+		</size>
+		<size level="7">
+			<type>Medium</type>
+			<diameter>10,400-11,999 Km</diameter>
+			<working_diam>11000</working_diam>
+		</size>
+		<size level="8">
+			<type>Large (e.g. Venus/Terra)</type>
+			<diameter>12,000-13,599 Km</diameter>
+			<working_diam>13000</working_diam>
+		</size>
+		<size level="9">
+			<type>Large</type>
+			<diameter>13,600-15,199 Km</diameter>
+			<working_diam>14000</working_diam>
+		</size>
+		<size level="A">
+			<type>Large</type>
+			<diameter>15,200-16,799 Km</diameter>
+			<working_diam>16000</working_diam>
+		</size>
+		<size level="B">
+			<type>Huge</type>
+			<diameter>16,800+ Km</diameter>
+			<working_diam>32000</working_diam>
+		</size>
+		<size level="SGG">
+			<type>Small Gas Giant</type>
+			<diameter>40,000-120,000 Km</diameter>
+			<working_diam>80000</working_diam>
+		</size>
+		<size level="LGG">
+			<type>Large Gas Giant</type>
+			<diameter>120,000-240,000+ Km</diameter>
+			<working_diam>160000</working_diam>
+		</size>
+	</size>
+	<atmosphere>
+		<atmosphere level="0">
+			<type>Vacuum</type>
+			<pressure>&lt; 100 Pa</pressure>
+			<desc>Vacuum requires a vacc suit. The atmosphere has a pressure of less than 0.001 atmospheres, which requires the use of a vacc suit.</desc>
+		</atmosphere>
+		<atmosphere level="1">
+			<type>Trace</type>
+			<pressure>100 - 9000 Pa</pressure>
+			<desc>The atmosphere has a pressure of less than 0.1 atmospheres, which requires the use of a vacc suit.</desc>
+		</atmosphere>
+		<atmosphere level="2">
+			<type>Very Thin / Tainted</type>
+			<pressure>10 - 42 KPa</pressure>
+			<desc>Very Thin tainted requires a filter respirator combination.</desc>
+		</atmosphere>
+		<atmosphere level="3">
+			<type>Very Thin</type>
+			<pressure>10 - 42 KPa</pressure>
+			<desc>The atmosphere has a pressure of 0.1 to 0.42 atmospheres, which requires the use of a respirator to ensure sufficient oxygen.</desc>
+		</atmosphere>
+		<atmosphere level="4">
+			<type>Thin / Tainted</type>
+			<pressure>43 - 70 KPa</pressure>
+			<desc>Tainted requires a filter mask. The atmosphere contains an unusual taint such as such as disease, a hazardous gas mix, pollutants, or sulfur compounds which requires the use of a filter mask.</desc>
+		</atmosphere>
+		<atmosphere level="5">
+			<type>Thin</type>
+			<pressure>43 - 70 KPa</pressure>
+			<desc>No survival gear required. The atmosphere has a pressure of 0 43 to 0.70 atmospheres. The atmosphere is a standard oxygen/nitrogen mix, which is breathable without assistance.</desc>
+		</atmosphere>
+		<atmosphere level="6">
+			<type>Standard</type>
+			<pressure>71 - 149 KPa</pressure>
+			<desc>No survival gear required. The atmosphere has a pressure of 0.71 to 1.49 atmospheres. The atmosphere is a standard oxygen/nitrogen mix, which is breathable without assistance.</desc>
+		</atmosphere>
+		<atmosphere level="7">
+			<type>Standard / Tainted</type>
+			<pressure>71 - 149 KPa</pressure>
+			<desc>Tainted requires a filter mask.</desc>
+		</atmosphere>
+		<atmosphere level="8">
+			<type>Dense</type>
+			<pressure>150 - 249 KPa</pressure>
+			<desc>No survival gear required. The atmosphere has a pressure of 1.50 to 2.49 atmospheres The atmosphere is a standard oxygen/nitrogen mix, which is breathable without assistance.</desc>
+		</atmosphere>
+		<atmosphere level="9">
+			<type>Dense / Tainted</type>
+			<pressure>150 - 249 KPa</pressure>
+			<desc>Tainted requires a filter mask.</desc>
+		</atmosphere>
+		<atmosphere level="A">
+			<type>Exotic, Conventional (Benign)</type>
+			<pressure>varies</pressure>
+			<desc>This type of atmosphere is unbreathable by humans, but is not otherwise hazardous. A Traveller needs an air supply to breath in an exotic atmosphere without suffocating.</desc>
+		</atmosphere>
+		<atmosphere level="B">
+			<type>Exotic, Conventional (Corrosive)</type>
+			<pressure>varies</pressure>
+			<desc>Corrosive atmospheres are highly dangerous. A Traveller who breathes in a corrosive atmosphere will suffer 1D damage each round.</desc>
+		</atmosphere>
+		<atmosphere level="C">
+			<type>Exotic, Conventional (Insidious)</type>
+			<pressure>varies</pressure>
+			<desc>An insidious atmosphere is like a corrosive one, but it is so potent that it attacks equipment as well. The chief danger in an insidious atmosphere is that the toxic gases will destroy the seals and filters on the Traveller’s protective gear. An insidious atmosphere worms its way past protection after 2D hours on average, although vigilant maintenance or advanced protective gear can prolong survival times.</desc>
+		</atmosphere>
+		<atmosphere level="D">
+			<type>Exotic, Unusual (Very Dense)</type>
+			<pressure>&gt; 250 KPa</pressure>
+			<desc>These worlds have thick N2/O2 atmospheres, but their mean surface pressure is too high to support unprotected human life (high pressure nitrogen and oxygen are deadly to humans). However, pressure naturally decreases with increasing altitude, so if there are highlands at the right altitude the pressure may drop enough to support human life. Alternatively, there may not be any topography high enough for humans to inhabit, necessitating floating gravitic or dirigible habitats or sealed habitats on the surface.</desc>
+		</atmosphere>
+		<atmosphere level="E">
+			<type>Exotic, Unusual (Low)</type>
+			<pressure>50 KPa or less</pressure>
+			<desc>The opposite of a Dense atmosphere, these massive worlds have thin N2/O2 atmospheres that settle in the lowlands and depressions and are only breathable there - the pressure drops off so rapidly with altitude that the highest topographic points of the surface may be close to vacuum.</desc>
+		</atmosphere>
+		<atmosphere level="F">
+			<type>Exotic, Unusual (Other)</type>
+			<pressure>varies</pressure>
+			<desc>An Unusual atmosphere is a catchall term for an atmosphere that behaves in a strange manner. Examples include ellipsoidal atmospheres, which are thin at the poles and dense at the equator; Panthalassic worlds composed of a rocky core surrounded by a water layer hundreds of kilometres thick; worlds wracked by storms so intense that local air pressure changes from dense to thin depending on the current weather and other planets with unusual and hazardous atmospheric conditions.</desc>
+		</atmosphere>
+	</atmosphere>
+	<hydrographics>
+		<hydrographics level="0">
+			<type>Desert World</type>
+			<surfacewater>0 - 4%</surfacewater>
+		</hydrographics>
+		<hydrographics level="1">
+			<type>Dry World</type>
+			<surfacewater>5 - 14%</surfacewater>
+		</hydrographics>
+		<hydrographics level="2">
+			<type>Inland Seas</type>
+			<surfacewater>15 - 24%</surfacewater>
+		</hydrographics>
+		<hydrographics level="3">
+			<type>Small Seas &amp; Oceans</type>
+			<surfacewater>25 - 34%</surfacewater>
+		</hydrographics>
+		<hydrographics level="4">
+			<type>Wet World</type>
+			<surfacewater>35 - 44%</surfacewater>
+		</hydrographics>
+		<hydrographics level="5">
+			<type>Large Oceans</type>
+			<surfacewater>45 - 54%</surfacewater>
+		</hydrographics>
+		<hydrographics level="6">
+			<type>Large Oceans</type>
+			<surfacewater>55 - 64%</surfacewater>
+		</hydrographics>
+		<hydrographics level="7">
+			<type>Earth-like</type>
+			<surfacewater>65 - 74%</surfacewater>
+		</hydrographics>
+		<hydrographics level="8">
+			<type>Massive Oceans</type>
+			<surfacewater>75 - 84%</surfacewater>
+		</hydrographics>
+		<hydrographics level="9">
+			<type>Archipelagos</type>
+			<surfacewater>85 - 94%</surfacewater>
+		</hydrographics>
+		<hydrographics level="A">
+			<type>Water World</type>
+			<surfacewater>95 - 100%</surfacewater>
+		</hydrographics>
+	</hydrographics>
+	<travel_code>
+		<travel_code code=" ">Not Classified</travel_code>
+		<travel_code code="A">Amber Zone</travel_code>
+		<travel_code code="R">Red Zone</travel_code>
+		<travel_code code="G">Green Zone</travel_code>
+	</travel_code>
+	<climate>
+		<climate level="0-2">
+			<type>Frozen</type>
+			<temperature>-51°C or less</temperature>
+			<desc>Frozen world. No liquid (surface) water, very dry atmosphere.</desc>
+		</climate>
+		<climate level="3,4">
+			<type>Frozen</type>
+			<temperature>-51° to 0°C</temperature>
+			<desc>Icy world. Little liquid water, extensive ice caps, few clouds.</desc>
+		</climate>
+		<climate level="5-9">
+			<type>Temperate</type>
+			<temperature>0° to 30°C</temperature>
+			<desc>Temperate world. Earth-like. Liquid &amp; vaporised water are common, moderate ice caps.</desc>
+		</climate>
+		<climate level="10,11">
+			<type>Hot</type>
+			<temperature>31° to 80°C</temperature>
+			<desc>Hot world. Small or no ice caps, little liquid water. Most water in the form of clouds.</desc>
+		</climate>
+		<climate level="12-20">
+			<type>Boiling</type>
+			<temperature>81°C or more</temperature>
+			<desc>Boiling world. No ice caps, little liquid water.</desc>
+		</climate>
+	</climate>
+	<orbit>
+		<orbit level="0">Star</orbit>
+		<orbit level="1-6">Inner System / Inner World</orbit>
+		<orbit level="7">Goldilocks Zone</orbit>
+		<orbit level="8-12">Remote System / Rogue World</orbit>
+		<orbit level="13-144">Remote System / Rogue World</orbit>
+		<orbit level="145-9999">Far System / Rogue World</orbit>
+		<orbit level="F">Far System / Rogue World</orbit>
+	</orbit>
+	<gravity>
+		<gravity level="0">Negligible</gravity>
+		<gravity level="1">0.05G</gravity>
+		<gravity level="2">0.15G</gravity>
+		<gravity level="3">0.25G</gravity>
+		<gravity level="4">0.35G</gravity>
+		<gravity level="5">0.45G</gravity>
+		<gravity level="6">0.7G</gravity>
+		<gravity level="7">0.9G</gravity>
+		<gravity level="8">1.0G</gravity>
+		<gravity level="9">1.25G</gravity>
+		<gravity level="10">1.50G</gravity>
+		<gravity level="11">2.0G</gravity>
+		<gravity level="12-25">Crushing</gravity>
+	</gravity>
+	<population>
+		<population level="0">
+			<type>None</type>
+			<desc></desc>
+			<magnitude>0</magnitude>
+		</population>
+		<population level="1">
+			<type>Few</type>
+			<desc>A small farmstead, hamlet, or a single family</desc>
+			<magnitude>10</magnitude>
+		</population>
+		<population level="2">
+			<type>Hundreds</type>
+			<desc>A village</desc>
+			<magnitude>100</magnitude>
+		</population>
+		<population level="3">
+			<type>Thousands</type>
+			<desc></desc>
+			<magnitude>1000</magnitude>
+		</population>
+		<population level="4">
+			<type>Tens of thousands</type>
+			<desc>Small town</desc>
+			<magnitude>10000</magnitude>
+		</population>
+		<population level="5">
+			<type>Hundreds of thousands</type>
+			<desc>Average city</desc>
+			<magnitude>100000</magnitude>
+		</population>
+		<population level="6">
+			<type>Millions</type>
+			<desc></desc>
+			<magnitude>100000</magnitude>
+		</population>
+		<population level="7">
+			<type>Tens of millions</type>
+			<desc>Large city</desc>
+			<magnitude>10000000</magnitude>
+		</population>
+		<population level="8">
+			<type>Hundreds of millions</type>
+			<desc></desc>
+			<magnitude>100000000</magnitude>
+		</population>
+		<population level="9">
+			<type>Billions</type>
+			<desc>Present day Earth</desc>
+			<magnitude>1000000000</magnitude>
+		</population>
+		<population level="A">
+			<type>Tens of Billions</type>
+			<desc></desc>
+			<magnitude>10000000000</magnitude>
+		</population>
+		<population level="B">
+			<type>Hundreds of Billions</type>
+			<desc>Incredibly crowded world</desc>
+			<magnitude>100000000000</magnitude>
+		</population>
+		<population level="C">
+			<type>Trillions</type>
+			<desc>World-city</desc>
+			<magnitude>1000000000000</magnitude>
+		</population>
+	</population>
+	<government>
+		<government level="0">
+			<type>None</type>
+			<desc>No government structure. In many cases, family bonds predominate</desc>
+			<examples>Family, Clan, Anarchy</examples>
+			<common_contraband>None</common_contraband>
+		</government>
+		<government level="1">
+			<type>Company/Corporation</type>
+			<desc>Ruling functions are assumed by a company managerial elite, and most citizenry are company employees or dependants</desc>
+			<examples>Corporate outpost, asteroid mine, feudal domain</examples>
+			<common_contraband>Weapons, Drugs, Travellers</common_contraband>
+		</government>
+		<government level="2">
+			<type>Participating Democracy</type>
+			<desc>Ruling functions are reached by the advice and consent of the citizenry directly</desc>
+			<examples>Collective, tribal council, commlinked consensus</examples>
+			<common_contraband>Drugs</common_contraband>
+		</government>
+		<government level="3">
+			<type>Self-Perpetuating Oligarchy</type>
+			<desc>Ruling functions are performed by a restricted minority, with little or no input from the mass of citizenry</desc>
+			<examples>Plutocracy, hereditary ruling caste</examples>
+			<common_contraband>Technology, Weapons, Travellers</common_contraband>
+		</government>
+		<government level="4">
+			<type>Representative Democracy</type>
+			<desc>Ruling functions are performed by elected representatives</desc>
+			<examples>Republic, democracy</examples>
+			<common_contraband>Drugs, Weapons, Powers</common_contraband>
+		</government>
+		<government level="5">
+			<type>Feudal Technocracy</type>
+			<desc>Ruling functions are performed by specific individuals for persons who agree to be ruled by them. Relationships are based on the performance of technical activities which are mutually beneficial</desc>
+			<examples>Those with access to higher technology tend to have higher social status</examples>
+			<common_contraband>Technology, Weapons, Information</common_contraband>
+		</government>
+		<government level="6">
+			<type>Captive Government</type>
+			<desc>Ruling functions are performed by an imposed leadership answerable to an outside group</desc>
+			<examples>A colony or conquered area</examples>
+			<common_contraband>Weapons, Technology, Travellers</common_contraband>
+		</government>
+		<government level="7">
+			<type>Balkanisation</type>
+			<desc>No central authority exists; rival governments complete for control. Law level refers to the government nearest the starport</desc>
+			<examples>Multiple governments, civil war</examples>
+			<common_contraband>Varies</common_contraband>
+		</government>
+		<government level="8">
+			<type>Civil Service Bureaucracy</type>
+			<desc>Ruling functions are performed by government agencies employing individuals selected for their expertise</desc>
+			<examples>Technocracy, Communism</examples>
+			<common_contraband>Drugs, Weapons</common_contraband>
+		</government>
+		<government level="9">
+			<type>Impersonal Bureaucracy</type>
+			<desc>Ruling functions are performed by agencies which have become insulated from the governed citizens</desc>
+			<examples>Entrenched castes of bureaucrats, decaying empire</examples>
+			<common_contraband>Technology, Weapons, Drugs, Travellers, Powers</common_contraband>
+		</government>
+		<government level="A">
+			<type>Charismatic Dictator</type>
+			<desc>Ruling functions are performed by agencies directed by a single leader who enjoys the overwhelming confidence of the citizens</desc>
+			<examples>Revolutionary leader, messiah, emperor</examples>
+			<common_contraband>None</common_contraband>
+		</government>
+		<government level="B">
+			<type>Non-Charismatic Leader</type>
+			<desc>A previous charismatic dictator has been replaced by a leader through normal channels</desc>
+			<examples>Military dictatorship, hereditary kingship</examples>
+			<common_contraband>Weapons, Technology, Information</common_contraband>
+		</government>
+		<government level="C">
+			<type>Charismatic Oligarchy</type>
+			<desc>Ruling functions are performed by a select group of members of an organisation or class which enjoys the overwhelming confidence of the citizenry</desc>
+			<examples>Junta, revolutionary council</examples>
+			<common_contraband>Weapons</common_contraband>
+		</government>
+		<government level="D">
+			<type>Religious Dictatorship</type>
+			<desc>Ruling functions are performed by a religious organisation without regard to the specific individual needs of the citizenry</desc>
+			<examples>Cult, transcendent philosophy, psionic group mind</examples>
+			<common_contraband>Varies</common_contraband>
+		</government>
+		<government level="E">
+			<type>Religious Autocracy</type>
+			<desc>Government by a single religious leader having absolute power over the citizenry</desc>
+			<examples>Messiah</examples>
+			<common_contraband>Varies</common_contraband>
+		</government>
+		<government level="F">
+			<type>Totalitarian Oligarchy</type>
+			<desc>Government by an all-powerful minority which maintains absolute control through widespread coercion and oppresion</desc>
+			<examples>World church, Ruthless corporation</examples>
+			<common_contraband>Varies</common_contraband>
+		</government>
+	</government>
+	<lawlevels>
+		<level level="0">
+			<general>No Law</general>
+			<weapons>No restrictions.</weapons>
+			<drugs>No restrictions.</drugs>
+			<information>No restrictions.</information>
+			<technology>No restrictions.</technology>
+			<travellers>No restrictions.</travellers>
+			<powers>No restrictions.</powers>
+		</level>
+		<level level="1">
+			<general>Minimal Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD</weapons>
+			<drugs>Highly addictive and dangerous narcotics</drugs>
+			<information>Intellect programs</information>
+			<technology>Dangerous technologies such as nanotechnology</technology>
+			<travellers>Visitors must contact planetary authorities by radio, landing is permitted anywhere</travellers>
+			<powers>Dangerous special powers must be registered.</powers>
+		</level>
+		<level level="2">
+			<general>Low Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles</weapons>
+			<drugs>Highly addictive narcotics</drugs>
+			<information>Dangerous technologies such as nanotechnology, Intrusion programs</information>
+			<technology>Alien/Artifact Technology</technology>
+			<travellers>Visitors must report passenger manifest, landing is permitted anywhere</travellers>
+			<powers>All special powers must be registered; use of dangerous powers forbidden</powers>
+		</level>
+		<level level="3">
+			<general>Mild Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons)</weapons>
+			<drugs>Combat drugs</drugs>
+			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs</information>
+			<technology>TL15+ items</technology>
+			<travellers>Visitors must report passenger manifest, Landing only at starport or other authorized sites</travellers>
+			<powers>All special powers must be registered; use of dangerous powers forbidden, Use of telepathy restricted to government-approved individuals</powers>
+		</level>
+		<level level="4">
+			<general>Modest Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons), Light assault weapons and submachine guns</weapons>
+			<drugs>Combat drugs, Addictive narcotics</drugs>
+			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs</information>
+			<technology>TL13+ items</technology>
+			<travellers>Visitors must report passenger manifest, Landing only at starport</travellers>
+			<powers>All special powers must be registered; use of dangerous powers forbidden, Use of telepathy restricted to government-approved individuals, Use of teleportation and clairvoyance restricted</powers>
+		</level>
+		<level level="5">
+			<general>Ordinary Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons), Light assault weapons and submachine guns, Personal concealable weapons</weapons>
+			<drugs>Combat drugs, Addictive narcotics, Anagathics</drugs>
+			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs, Expert programs</information>
+			<technology>TL11+ items</technology>
+			<travellers>Citizens must register offworld travel, visitors must register all business, Landing only at starport</travellers>
+			<powers>All special powers must be registered; Use of all special powers restricted to government specialists</powers>
+		</level>
+		<level level="6">
+			<general>Strict Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, All firearms (energy included) except shotguns and stunners; carrying weapons strongly discouraged</weapons>
+			<drugs>Combat drugs, Addictive narcotics, Anagathics, Fast and Slow drugs</drugs>
+			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs, Expert programs, Recent news from offworld</information>
+			<technology>TL9+ items</technology>
+			<travellers>Citizens must register offworld travel, visitors must register all business, Landing only at starport, Visits discouraged; excessive contact with citizens forbidden</travellers>
+			<powers>All special powers must be registered; Use of all special powers restricted to government specialists; Possession of power-related drugs banned</powers>
+		</level>
+		<level level="7">
+			<general>Rigorous Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Portable energy weapons, ship-mounted weapons, All firearms except stunners; carrying weapons strongly discouraged</weapons>
+			<drugs>Combat drugs, Anagathics, Fast and Slow drugs, All narcotics</drugs>
+			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs, Expert programs, Library programs, unfiltered data about other worlds, free speech curtailed</information>
+			<technology>TL7+ items</technology>
+			<travellers>Visitors must register all business, Landing only at starport, Citizens may not leave planet; visitors may not leave starport</travellers>
+			<powers>All special powers must be registered; Use of special powers forbidden; Possession of power-related drugs banned</powers>
+		</level>
+		<level level="8">
+			<general>Strict Law</general>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Portable energy weapons, ship-mounted weapons, All firearms including stunners, All bladed weapons; carrying weapons strongly discouraged</weapons>
+			<drugs>Combat drugs, Anagathics, Fast and Slow drugs, All narcotics, Medicinal drugs</drugs>
+			<information>All Information technology, any non-critical data from offworld, personal media</information>
+			<technology>TL5+ items</technology>
+			<travellers>Landing permitted only to diplomats</travellers>
+			<powers>All special powers must be registered; Power-related technology and equipment banned</powers>
+		</level>
+		<level level="9">
+			<general>Harsh Law</general>
+			<weapons>Any weapons</weapons>
+			<drugs>All drugs</drugs>
+			<information>All Information technology, Any data from offworld, no free press</information>
+			<technology>TL3+ items</technology>
+			<travellers>No offworlders permitted</travellers>
+			<powers>All special powers, and related persons, drugs and equipment</powers>
+		</level>
+		<level level="10-20">
+			<general>Extreme Law</general>
+			<weapons>Any weapons</weapons>
+			<drugs>All drugs</drugs>
+			<information>All Information technology, Paper media, free speech</information>
+			<technology>TL2+ items</technology>
+			<travellers>No offworlders permitted</travellers>
+			<powers>All special powers, and related persons, drugs and equipment</powers>
+		</level>
+	</lawlevels>
+	<techlevels> <!-- src: http://wiki.travellerrpg.com/Tech_Level_Comparison_Chart -->
+		<level level="0">
+			<general>
+				<general>Neolithic</general>
+				<energy>Muscles</energy>
+				<computing>Fingers and sticks</computing>
+				<communication>Oral couriers</communication>
+				<medicine>Mystics/Herbology</medicine>
+				<environment>Natural (Caves, Huts)</environment>
+			</general>
+			<transport>
+				<land>Foot/Animals</land>
+				<water>Raft/Canoe</water>
+				<air>None</air>
+				<space>None</space>
+			</transport>
+			<military>
+				<personalweapons>Club, Spear</personalweapons>
+				<personalarmour>Fur</personalarmour>
+				<heavyweapons>None</heavyweapons>
+				<heavyarmour>None</heavyarmour>
+			</military>
+		</level>
+		<level level="1">
+			<general>
+				<general>Classical</general>
+				<energy>Water</energy>
+				<computing>Abacus, Geometry, Trigonometry</computing>
+				<communication>Long Distance Signaling</communication>
+				<medicine>Diagnosis</medicine>
+				<environment>Settlements - Towns (Irrigation)</environment>
+			</general>
+			<transport>
+				<land>Wheel - Carts/Chariots</land>
+				<water>Rowed Galleys, Crude Sailing Vessels</water>
+				<air>None</air>
+				<space>None</space>
+			</transport>
+			<military>
+				<personalweapons>Early Weapons (Bow, Sword)</personalweapons>
+				<personalarmour>Jack Armour</personalarmour>
+				<heavyweapons>Catapult</heavyweapons>
+				<heavyarmour>Wood, Bronze</heavyarmour>
+			</military>
+		</level>
+		<level level="2">
+			<general>
+				<general>Renaissance</general>
+				<energy>Wind, Clockwork</energy>
+				<computing>Algebra</computing>
+				<communication>Printing press</communication>
+				<medicine>Internal Anatomy</medicine>
+				<environment>Cities (Canals, Roads)</environment>
+			</general>
+			<transport>
+				<land>Advanced Wheel - Moveable Axle, Replaceable Rims, Stagecoaches</land>
+				<water>Early Multi-Mast Sailing, Oceangoing sailing ships, Crude Navigation</water>
+				<air>None</air>
+				<space>None</space>
+			</transport>
+			<military>
+				<personalweapons>Early Guns</personalweapons>
+				<personalarmour>Jack Armour</personalarmour>
+				<heavyweapons>Small Cannons</heavyweapons>
+				<heavyarmour>Wood, Bronze, Iron</heavyarmour>
+			</military>
+		</level>
+		<level level="3">
+			<general>
+				<general>Early Industrial</general>
+				<energy>Coal / Steam</energy>
+				<computing>Algebra, Calculus</computing>
+				<communication>Telegraph, Audio Recording</communication>
+				<medicine>Surgery</medicine>
+				<environment>Cement Structures</environment>
+			</general>
+			<transport>
+				<land>Extensive Road - High-Speed Coach</land>
+				<water>Multi-Mast Sailing, Navigation</water>
+				<air>Manned Hot Air Balloons</air>
+				<space>None</space>
+			</transport>
+			<military>
+				<personalweapons>Rifled Weapons</personalweapons>
+				<personalarmour>Jack Armour</personalarmour>
+				<heavyweapons>Cannons</heavyweapons>
+				<heavyarmour>Wood, Bronze, Iron, Crude Steel</heavyarmour>
+			</military>
+		</level>
+		<level level="4">
+			<general>
+				<general>Victorian Industrial</general>
+				<energy>Electricity</energy>
+				<computing>Mechanical Calculators</computing>
+				<communication>Telephone</communication>
+				<medicine>Vaccination, Antiseptics, Anesthetics</medicine>
+				<environment>Cities in Rugged/Desert Terrain, Crude Terraform</environment>
+			</general>
+			<transport>
+				<land>Trains</land>
+				<water>Ironclads, Steamships</water>
+				<air>Dirigibles, Early Gliders</air>
+				<space>None</space>
+			</transport>
+			<military>
+				<personalweapons>Cartridge</personalweapons>
+				<personalarmour>Mesh Armour</personalarmour>
+				<heavyweapons>Howitzers, Gatling gun</heavyweapons>
+				<heavyarmour>Soft Steel</heavyarmour>
+			</military>
+		</level>
+		<level level="5">
+			<general>
+				<general>Great War Era</general>
+				<energy>Petrochemicals, Internal combustion</energy>
+				<computing>Electric Calculators</computing>
+				<communication>Radio, Radar</communication>
+				<medicine>Mass Vaccination, X-Ray</medicine>
+				<environment>Sealed/Conditioned Cities</environment>
+			</general>
+			<transport>
+				<land>Ground Cars, Tracked Vehicles</land>
+				<water>Personal Self-Propelled Boats, Steel hulls, Early Submersibles</water>
+				<air>Airplanes, Seaplanes</air>
+				<space>Early Rockets (unmanned)</space>
+			</transport>
+			<military>
+				<personalweapons>Explosive Grenade, Shotgun</personalweapons>
+				<personalarmour>Mesh Armour, Filter Mask</personalarmour>
+				<heavyweapons>Mortars</heavyweapons>
+				<heavyarmour>Soft Steel</heavyarmour>
+			</military>
+		</level>
+		<level level="6">
+			<general>
+				<general>Atomic Age</general>
+				<energy>Nuclear Fission</energy>
+				<computing>Electronic Computers (Large Model/1 bis)</computing>
+				<communication>Television / Advanced Audio Recording</communication>
+				<medicine>Virus, Crude Prosthetics</medicine>
+				<environment>Skyscrapers, Weather Predict, Underground Cities</environment>
+			</general>
+			<transport>
+				<land>Amphibian Vehicles, ATVs, AFVs</land>
+				<water>Submersibles, Scuba, Amphibian Vehicles</water>
+				<air>Early Jet, Helicopters</air>
+				<space>Early Manned Rockets, Unmanned Rockets</space>
+			</transport>
+			<military>
+				<personalweapons>Automatic (SMG)</personalweapons>
+				<personalarmour>Mesh Armour, Filter Mask</personalarmour>
+				<heavyweapons>Nuclear Weapons, Missiles</heavyweapons>
+				<heavyarmour>Hard Steel</heavyarmour>
+			</military>
+		</level>
+		<level level="7">
+			<general>
+				<general>Cold War Era</general>
+				<energy>Solar energy, early Fuel Cells</energy>
+				<computing>Desktop Computers, Expert systems, Model/2</computing>
+				<communication>Early Satellite, Video recording</communication>
+				<medicine>Organ Transplant, Slow Drugs</medicine>
+				<environment>Cities in Jungle Terrain</environment>
+			</general>
+			<transport>
+				<land>Hovercraft, High-Speed Trains</land>
+				<water>Hydrofoils, Hovercraft</water>
+				<air>Supersonic Jet, Hang Gliders</air>
+				<space>Deep Space Probes (Unmanned), Maneuver-1/2 (non-gravitic)</space>
+			</transport>
+			<military>
+				<personalweapons>Automatic (SMG), Grenade Launchers</personalweapons>
+				<personalarmour>Cloth Armour, Flack Jacket</personalarmour>
+				<heavyweapons>Beam Lasers</heavyweapons>
+				<heavyarmour>Composite Laminate</heavyarmour>
+			</military>
+		</level>
+		<level level="8">
+			<general>
+				<general>Internet (Contemporary) Era</general>
+				<energy>Geothermal</energy>
+				<computing>Massive Parallel / Low Data, Model/2bis</computing>
+				<communication>Fibre optics</communication>
+				<medicine>Artificial Organs, Metabolics</medicine>
+				<environment>Orbital Settlements, Early Weather Control</environment>
+			</general>
+			<transport>
+				<land>Triphibian Vehicles</land>
+				<water>Triphibian Vehicles, Early Artificial Gills</water>
+				<air>Triphibian Vehicles, Hypersonic Jet</air>
+				<space>Space Shuttles, Space Stations, Maneuver-3-5 (non-grav)</space>
+			</transport>
+			<military>
+				<personalweapons>RAM Grenade Launchers, Early Laser Carbine</personalweapons>
+				<personalarmour>Cloth Armour, Flack Jacket</personalarmour>
+				<heavyweapons>Particle Accelerators, Target Desginated Missiles</heavyweapons>
+				<heavyarmour>Composite Laminate</heavyarmour>
+			</military>
+		</level>
+		<level level="9">
+			<general>
+				<general>Intrastellar Era</general>
+				<energy>Early Fusion, Improved Batteries</energy>
+				<computing>Non-Volatile / High Data, Vocal I/O, Model/3</computing>
+				<communication>Video Telephone, Flat Screen</communication>
+				<medicine>Limb Regeneration, Cryogenics, Fast Drugs</medicine>
+				<environment>Arcologies, Orbital Cities</environment>
+			</general>
+			<transport>
+				<land>Early Grav Vehicles, Ultra High-Speed Trains</land>
+				<water>Early Grav Vehicles, Artificial Gills</water>
+				<air>Supersonic Jet, Hang Gliders</air>
+				<space>Jump-1 possible, Sublight Stellar</space>
+			</transport>
+			<military>
+				<personalweapons>Laser Weapons</personalweapons>
+				<personalarmour>Ablative Armour</personalarmour>
+				<heavyweapons>Particle Accelerators, Target Desginated Missiles</heavyweapons>
+				<heavyarmour>Light Weight Composite Laminate</heavyarmour>
+			</military>
+		</level>
+		<level level="10">
+			<general>
+				<general>Interstellar Era</general>
+				<energy>Fusion Plants</energy>
+				<computing>Early Synaptics, voice transcription, Model/4</computing>
+				<communication>Holovision, Text Transcription</communication>
+				<medicine>Antiviral Vaccines, Cancer Cure, Growth Quickining</medicine>
+				<environment>Under-Sea/Under Ice Cities</environment>
+			</general>
+			<transport>
+				<land>Grav Vehicles</land>
+				<water>Grav Vehicles</water>
+				<air>UH (Ultra-High) Grav Modules</air>
+				<space>Gravitic Maneuver, Jump-1 certain </space>
+			</transport>
+			<military>
+				<personalweapons>Advanced Combat Rifle</personalweapons>
+				<personalarmour>Reflec, Combat Environment Suit</personalarmour>
+				<heavyweapons>Plasma Guns, Repulsors</heavyweapons>
+				<heavyarmour>Crystaliron</heavyarmour>
+			</military>
+		</level>
+		<level level="11">
+			<general>
+				<general>Interstellar Era - Cybertech</general>
+				<energy>Fusion Plants</energy>
+				<computing>Synaptic Learning Processors, Hand Computers, Model/5</computing>
+				<communication>Personal Global Communications</communication>
+				<medicine>Nerve Refusion, Artificial Eyes</medicine>
+				<environment>Gravitic Structure Support</environment>
+			</general>
+			<transport>
+				<land>Personal G-Tubes, HV (High-Velocity) Grav Modules</land>
+				<water>Personal G-Tubes, HV (High-Velocity) Grav Modules</water>
+				<air>Personal G-Tubes, HV (High-Velocity) Grav Modules</air>
+				<space>Jump-2, Thruster Technology</space>
+			</transport>
+			<military>
+				<personalweapons>Advanced Combat Rifle</personalweapons>
+				<personalarmour>Combat Armour</personalarmour>
+				<heavyweapons>Meson Guns</heavyweapons>
+				<heavyarmour>Crystaliron</heavyarmour>
+			</military>
+		</level>
+		<level level="12">
+			<general>
+				<general>Interstellar Era - Terraforming</general>
+				<energy>Fusion Plants, Advanced Fuel Cells</energy>
+				<computing>Low Autonomous Robots, Model/6</computing>
+				<communication>Real-time Multilingual Translators</communication>
+				<medicine>Broad Spectrum Anti-toxins, Enhanced Prosthetics</medicine>
+				<environment>Major Terraforming, Advanced Weather Control</environment>
+			</general>
+			<transport>
+				<land>Personal Grav Belts, LT  Grav Modules</land>
+				<water>Personal Grav Belts, LT Grav Modules</water>
+				<air>Personal Grav Belts, LT Grav Modules</air>
+				<space>Jump-3</space>
+			</transport>
+			<military>
+				<personalweapons>PGMP-12, Gauss Rifle</personalweapons>
+				<personalarmour>Combat Armour</personalarmour>
+				<heavyweapons>Fusion Guns</heavyweapons>
+				<heavyarmour>Superdense Armour, Nuclear Dampers</heavyarmour>
+			</military>
+		</level>
+		<level level="13">
+			<general>
+				<general>Robotics Era</general>
+				<energy>Fusion Plants, Miniature Super-Batteries</energy>
+				<computing>Holocrystal Storage, High Autonomous Robots, Model/7</computing>
+				<communication>Holovideo Recorders</communication>
+				<medicine>Cloning of Replacement Parts, Reanimation</medicine>
+				<environment>Non-mobile Gravitic Cities</environment>
+			</general>
+			<transport>
+				<land>Grav Vehicles</land>
+				<water>Grav Vehicles</water>
+				<air>Grav Vehicles</air>
+				<space>Grav Vehicles Merge with Orbital Spacecraft, Jump-4</space>
+			</transport>
+			<military>
+				<personalweapons>PGMP-13, X-Ray Lasers</personalweapons>
+				<personalarmour>Battle Dress</personalarmour>
+				<heavyweapons>X-Ray Lasers</heavyweapons>
+				<heavyarmour>Superdense Armour, Nuclear Dampers</heavyarmour>
+			</military>
+		</level>
+		<level level="14">
+			<general>
+				<general>Flying Cities Era</general>
+				<energy>Fusion Plants</energy>
+				<computing>Computer/Brain Implants, Model/8</computing>
+				<communication>Early Meson Communicators</communication>
+				<medicine>Genetic Engineering, Memory Erasure</medicine>
+				<environment>Mobile Gravitic Cities</environment>
+			</general>
+			<transport>
+				<land>Grav Vehicles</land>
+				<water>Grav Vehicles</water>
+				<air>Grav Vehicles</air>
+				<space>Grav Vehicles, Jump-5</space>
+			</transport>
+			<military>
+				<personalweapons>FGMP-14</personalweapons>
+				<personalarmour>Battle Dress</personalarmour>
+				<heavyweapons>X-Ray Lasers</heavyweapons>
+				<heavyarmour>Bonded Superdense</heavyarmour>
+			</military>
+		</level>
+		<level level="15">
+			<general>
+				<general>Biotech Era</general>
+				<energy>Fusion Plants</energy>
+				<computing>Pseudo-Reality Computers, Pseudo Robots, Model/9</computing>
+				<communication>Meson Communicators, Pseudo Reality Communications</communication>
+				<medicine>Anagathics, Advanced Pseudobio Prosthetics</medicine>
+				<environment>Complex Terraforming Possible</environment>
+			</general>
+			<transport>
+				<land>Grav Vehicles</land>
+				<water>Grav Vehicles</water>
+				<air>Grav Vehicles</air>
+				<space>Grav Vehicles, Jump-6</space>
+			</transport>
+			<military>
+				<personalweapons>FGMP-15</personalweapons>
+				<personalarmour>Battle Dress</personalarmour>
+				<heavyweapons>X-Ray Lasers</heavyweapons>
+				<heavyarmour>Early Black Globes</heavyarmour>
+			</military>
+		</level>
+		<level level="16">
+			<general>
+				<general>Ubiquitous Robotics Era</general>
+				<energy>Fusion Plants</energy>
+				<computing>Low Artificial Intelligence, Robots in all Facets</computing>
+				<communication>Personal Meson Communicators, Personal Holovideo</communication>
+				<medicine>Brain Transplants, Crude Memory Transfer</medicine>
+				<environment>Global Terraforming, Hostile Worlds</environment>
+			</general>
+			<transport>
+				<land>Grav Vehicles</land>
+				<water>Grav Vehicles</water>
+				<air>Grav Vehicles</air>
+				<space>Grav Vehicles, Jump-6, Raw Material Only Short Range Matter Transport</space>
+			</transport>
+			<military>
+				<personalweapons>FGMP-16, Plasma Rifle, Neural Gun</personalweapons>
+				<personalarmour>Neural Shield</personalarmour>
+				<heavyweapons>Tractor Beam</heavyweapons>
+				<heavyarmour>Black Globes</heavyarmour>
+			</military>
+		</level>
+		<level level="17">
+			<general>
+				<general>A.I. Era</general>
+				<energy>Early Antimatter Plants</energy>
+				<computing>High Artificial Intelligence, Self-Aware Robots</computing>
+				<communication>Pocket Meson Communications</communication>
+				<medicine>Selective Memory Erasure, Intelligent Anitbodies</medicine>
+				<environment>Total Terraforming to 800Km worlds</environment>
+			</general>
+			<transport>
+				<land>Grav Vehicles</land>
+				<water>Grav Vehicles</water>
+				<air>Grav Vehicles</air>
+				<space>Grav Vehicles, Jump-6, Inanimate Only Short Range Matter Transport</space>
+			</transport>
+			<military>
+				<personalweapons>Fusion Rifle, Plama Pistol</personalweapons>
+				<personalarmour>Neural Shield</personalarmour>
+				<heavyweapons>Disintegrators, Antimatter Warheads</heavyweapons>
+				<heavyarmour>Coherent Superdense</heavyarmour>
+			</military>
+		</level>
+		<level level="18">
+			<general>
+				<general>Eclipse Phase</general>
+				<energy>Antimatter Plants</energy>
+				<computing>Robots become Society's Basic Workforce</computing>
+				<communication>Pocket Meson Communications</communication>
+				<medicine>Permanent Memory Transfer</medicine>
+				<environment>Total Terraforming to 4000Km worlds</environment>
+			</general>
+			<transport>
+				<land>Grav Vehicles</land>
+				<water>Grav Vehicles</water>
+				<air>Grav Vehicles</air>
+				<space>Grav Vehicles, Jump-6, Self-Aware Starships, living being portal based Matter Transport</space>
+			</transport>
+			<military>
+				<personalweapons>Disintegrator Rifle, Fusion Pistol</personalweapons>
+				<personalarmour>Personal Damper</personalarmour>
+				<heavyweapons>Long Range Disintegrator/Tractor Beam</heavyweapons>
+				<heavyarmour>Coherent Superdense</heavyarmour>
+			</military>
+		</level>
+	</techlevels>
+	<tradecodes>
+		<tradecode name="Agricultural" tag="Ag">
+			<requirements>
+				<size></size>
+				<atmosphere>4-9</atmosphere>
+				<hydrographics>4-8</hydrographics>
+				<population>5-7</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Dedicated to farming and food production. Often, they are divided into vast semi-feudal estates.</desc>
+		</tradecode>
+		<tradecode name="Asteroid" tag="As">
+			<requirements>
+				<size>0</size>
+				<atmosphere>0</atmosphere>
+				<hydrographics>0</hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Usually mining colonies, but can also be orbital factories or colonies.</desc>
+		</tradecode>
+		<tradecode name="Barren" tag="Ba">
+			<requirements>
+				<size></size>
+				<atmosphere></atmosphere>
+				<hydrographics></hydrographics>
+				<population>0</population>
+				<government>0</government>
+				<lawlevel>0</lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Uncolonised and empty.</desc>
+		</tradecode>
+		<tradecode name="Desert" tag="De">
+			<requirements>
+				<size></size>
+				<atmosphere>2-20</atmosphere>
+				<hydrographics>0</hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Dry and barely habitable.</desc>
+		</tradecode>
+		<tradecode name="Fluid Oceans" tag="Fl">
+			<requirements>
+				<size></size>
+				<atmosphere>10-20</atmosphere>
+				<hydrographics>1-20</hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Worlds where the surface liquid is something other than water, and so are incompatible with Earth-derived life.</desc>
+		</tradecode>
+		<tradecode name="Garden" tag="Ga">
+			<requirements>
+				<size>6-8</size>
+				<atmosphere>5,6,8</atmosphere>
+				<hydrographics>5-7</hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Worlds that are Earth-like.</desc>
+		</tradecode>
+		<tradecode name="High Population" tag="Hi">
+			<requirements>
+				<size></size>
+				<atmosphere></atmosphere>
+				<hydrographics></hydrographics>
+				<population>9-20</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>A population in the billions.</desc>
+		</tradecode>
+		<tradecode name="High Technology" tag="Ht">
+			<requirements>
+				<size></size>
+				<atmosphere></atmosphere>
+				<hydrographics></hydrographics>
+				<population>1-20</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel>12-20</techlevel>
+			</requirements>
+			<desc>Among the most technologically advanced in Charted Space.</desc>
+		</tradecode>
+		<tradecode name="Ice-Capped" tag="Ic">
+			<requirements>
+				<size></size>
+				<atmosphere>0-1</atmosphere>
+				<hydrographics>1-20</hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Worlds that have most of their surface liquid frozen in polar ice caps, and are cold and dry.</desc>
+		</tradecode>
+		<tradecode name="Industrial" tag="In">
+			<requirements>
+				<size></size>
+				<atmosphere>0-2,4,7,9</atmosphere>
+				<hydrographics></hydrographics>
+				<population>9-20</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Dominated by factories and cities.</desc>
+		</tradecode>
+		<tradecode name="Low Population" tag="Lo">
+			<requirements>
+				<size></size>
+				<atmosphere></atmosphere>
+				<hydrographics></hydrographics>
+				<population>1-3</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>A population of only a few thousand or less.</desc>
+		</tradecode>
+		<tradecode name="Low Technology" tag="Lt">
+			<requirements>
+				<size></size>
+				<atmosphere></atmosphere>
+				<hydrographics></hydrographics>
+				<population>1-20</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel>0-5</techlevel>
+			</requirements>
+			<desc>Pre-industrial and cannot produce advanced goods.</desc>
+		</tradecode>
+		<tradecode name="Non-Agricultural" tag="Na">
+			<requirements>
+				<size></size>
+				<atmosphere>0-3</atmosphere>
+				<hydrographics>0-3</hydrographics>
+				<population>6-20</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Too dry or barren to support their populations using conventional food production.</desc>
+		</tradecode>
+		<tradecode name="Non-Industrial" tag="Ni">
+			<requirements>
+				<size></size>
+				<atmosphere></atmosphere>
+				<hydrographics></hydrographics>
+				<population>1-6</population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Too low in population to maintain an extensive industrial base.</desc>
+		</tradecode>
+		<tradecode name="Poor" tag="Po">
+			<requirements>
+				<size></size>
+				<atmosphere>2-5</atmosphere>
+				<hydrographics>0-3</hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Lacking resources, viable land or suficient population to be anything other than marginal colonies.</desc>
+		</tradecode>
+		<tradecode name="Rich" tag="Ri">
+			<requirements>
+				<size></size>
+				<atmosphere>6,8</atmosphere>
+				<hydrographics></hydrographics>
+				<population>6-8</population>
+				<government>4-9</government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Blessed with a stable government and viable biosphere, making them economic powerhouses.</desc>
+		</tradecode>
+		<tradecode name="Vacuum" tag="Va">
+			<requirements>
+				<size></size>
+				<atmosphere>0</atmosphere>
+				<hydrographics></hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>No atmosphere.</desc>
+		</tradecode>
+		<tradecode name="Water World" tag="Wa">
+			<requirements>
+				<size></size>
+				<atmosphere></atmosphere>
+				<hydrographics>10-20</hydrographics>
+				<population></population>
+				<government></government>
+				<lawlevel></lawlevel>
+				<techlevel></techlevel>
+			</requirements>
+			<desc>Almost entirely water-ocean across their surface.</desc>
+		</tradecode>
+	</tradecodes>
+	<culture>
+		<quirk index="q01" name="Sexist">One gender is considered subservient or inferior to the other.</quirk>
+		<quirk index="q02" name="Religious">Culture is heavily influenced by a religion or belief systems, possibly one unique to this world.</quirk>
+		<quirk index="q03" name="Artistic">Art and culture are highly prized. Aesthetic design is important in all artefacts produced on world.</quirk>
+		<quirk index="q04" name="Ritualised">Social interaction and trade is highly formalized. Politeness and adherence to traditional forms is considered very important.</quirk>
+		<quirk index="q05" name="Conservative">The culture resists change and outside influences.</quirk>
+		<quirk index="q06" name="Xenophobic">The culture distrusts outsiders and alien influences. Offworlders will face considerable prejudice.</quirk>
+		<quirk index="q07" name="Taboo">A particular topic is forbidden and cannot be discussed. Travellers who unwittingly mention this topic will be ostracized.</quirk>
+		<quirk index="q08" name="Deceptive">Trickery and equivocation are considered acceptable. Honesty is a sign of weakness.</quirk>
+		<quirk index="q09" name="Liberal">The culture welcomes change and offworld influence. Travellers who bring new and strange ideas will be welcomed.</quirk>
+		<quirk index="q10" name="Honourable">One’s word is one’s bond in the culture. Lying is both rare and despised.</quirk>
+		<quirk index="q11" name="Influenced">The culture is heavily influenced by another, neighboring world. Roll again for a cultural quirk that has been inherited from the culture.</quirk>
+		<quirk index="q12" name="Fusion">The culture is a merger of two distinct cultures. Roll again twice to determine the quirks inherited from these cultures. If the quirks are incompatible, then the culture is likely divided.</quirk>
+		<quirk index="q13" name="Barbaric">Physical strength and combat prowess are highly valued in the culture. Travellers may be challenged to a fight, or dismissed if they seem incapable of defending themselves. Sports tend towards the bloody and violent.</quirk>
+		<quirk index="q14" name="Remnant">The culture is a surviving remnant of a once-great and vibrant civilization, clinging to its former glory. The world is filled with crumbling ruins, and every story revolves around the good old days.</quirk>
+		<quirk index="q15" name="Degenerate">The culture is falling apart and is on the brink of war or economic collapse. Violent protests are common, and the social order is decaying.</quirk>
+		<quirk index="q16" name="Progressive">The culture is expanding and vibrant. Fortunes are being made in trade; science is forging bravely ahead.</quirk>
+		<quirk index="q17" name="Recovering">A recent trauma, such as a plague, war, disaster or despotic regime has left scars on the culture.</quirk>
+		<quirk index="q18" name="Nexus">Members of many different cultures and species visit here.</quirk>
+		<quirk index="q19" name="Tourist Attraction">Some aspect of the culture or the planet draws visitors from all over charted space.</quirk>
+		<quirk index="q20" name="Violent">Physical conflict is common, taking the form of duels, brawls or other contests. Trial by combat is a part of their judicial system.</quirk>
+	    <quirk index="q21" name="Peaceful">Physical conflict is almost unheardof. The culture produces few soldiers, and diplomacy reigns supreme. Forceful Travellers will be ostracized.</quirk>
+		<quirk index="q22" name="Obsessed">Everyone is obsessed with or addicted to a substance, personality, act or item. This monomania pervades every aspect of the culture.</quirk>
+		<quirk index="q23" name="Fashion">Fine clothing and decoration are considered vitally important in the culture. Underdressed Travellers have no standing here.</quirk>
+		<quirk index="q24" name="At War">The culture is at war, either with another planet or polity, or is troubled by terrorists or rebels.</quirk>
+		<quirk index="q25" name="Unusual Custom: Offworlders">Space travellers hold a unique position in the culture’s mythology or beliefs, and travellers will be expected to live up to these myths.</quirk>
+		<quirk index="q26" name="Unusual Custom: Starport">The planet’s starport is more than a commercial center; it might be a religious temple, or be seen as highly controversial and surrounded by protesters.</quirk>
+		<quirk index="q27" name="Unusual Custom: Media">News agencies and telecommunications channels are especially strange here. Getting accurate information may be difficult.</quirk>
+		<quirk index="q28" name="Unusual Customs: Technology">The culture interacts with technology in an unusual way. Telecommunications might be banned, robots might have civil rights, or cyborgs might be property.</quirk>
+		<quirk index="q29" name="Unusual Customs: Lifecycle">There might be a mandatory age of termination, or anagathics might be widely used. Family units might be different, with children being raised by the state or banned in favor of cloning.</quirk>
+		<quirk index="q30" name="Unusual Customs: Social Standings">The culture has a distinct caste system. Travellers of a low social standing who do not behave appropriately will face punishment.</quirk>
+		<quirk index="q31" name="Unusual Customs: Trade">The culture has an odd attitude towards some aspect of commerce, which may interfere with trade at the spaceport. For example, merchants might expect a gift as part of a deal, or some goods may only be handled by certain families.</quirk>
+		<quirk index="q32" name="Unusual Customs: Nobility">Those of high social standing have a strange custom associated with them; perhaps nobles are blinded, or must live in gilded cages, or only serve for a single year before being exiled.</quirk>
+		<quirk index="q33" name="Unusual Customs: Sex">The culture has an unusual attitude towards intercourse and reproduction. Perhaps cloning is used instead, or sex is used to seal commercial deals.</quirk>
+		<quirk index="q34" name="Unusual Customs: Eating">Food and drink occupies an unusual place in the culture. Perhaps eating is a private affair, or banquets and formal dinners are seen as the highest form of politeness.</quirk>
+		<quirk index="q35" name="Unusual Customs: Travel">Travellers may be distrusted or feted, or perhaps the culture frowns on those who leave their homes.</quirk>
+		<quirk index="q36" name="Unusual Customs: Conspiracy">Something strange is going on. The government is being subverted by another group or agency.</quirk>
+	</culture>
+	<stars>
+		<class name="O" color="Blue">
+			<luminosity>30000</luminosity>
+			<temperature variance="300000">30000</temperature>
+			<diams>6.6</diams>
+			<desc>Very hot and very luminous, being bluish in color; in fact, most of their output is in the ultraviolet range. These are the rarest of all main sequence stars, constituting as few as 1 in 3,000,000 in the solar neighborhood O-stars shine with a power over a million times our Sun's output. Because they are so huge, class O stars burn through their hydrogen fuel very quickly, and are the first stars to leave the main sequence.</desc>
+		</class>
+		<class name="B" color="Blue-White">
+			<luminosity>25</luminosity>
+			<temperature variance="20000">10000</temperature>
+			<diams>4.2</diams>
+			<desc>Extremely luminous and blue. As O and B stars are so powerful, they only live for a very short time, and thus they do not stray far from the area in which they were formed. These stars tend to cluster together in what are called OB associations, which are associated with giant molecular clouds. The Orion OB1 association occupies a large portion of a spiral arm of our galaxy and contains many of the brighter stars of the constellation Orion. They constitute about 1 in 800 main sequence stars in the solar neighborhood.</desc>
+		</class>
+		<class name="A" color="White">
+			<luminosity>5</luminosity>
+			<temperature variance="2500">7500</temperature>
+			<diams>1.6</diams>
+			<desc>Amongst the more common naked eye stars, and are white or bluish-white. They comprise about 1 in 160 of the main sequence stars in the solar neighborhood.</desc>
+		</class>
+		<class name="F" color="Yellow-White">
+			<luminosity>1.5</luminosity>
+			<temperature variance="1500">6000</temperature>
+			<diams>1.3</diams>
+			<desc>These stars' color is white with a slight tinge of yellow. These represent about 1 in 32 of the main sequence stars in the solar neighborhood.</desc>
+		</class>
+		<class name="G" color="Yellow">
+			<luminosity>1.5</luminosity>
+			<temperature variance="800">5200</temperature>
+			<diams>1.0</diams>
+			<desc>The best known, if only for the reason that Sol (Terra) is of this class. Supergiant stars often swing between O or B (blue) and K or M (red). While they do this, they do not stay for long in the G classification as this is an extremely unstable place for a supergiant to be. G stars represent about 1 in 13 of the main sequence stars in the solar neighborhood.</desc>
+		</class>
+		<class name="K" color="Orange">
+			<luminosity>0.6</luminosity>
+			<temperature variance="1500">2700</temperature>
+			<diams>0.8</diams>
+			<desc>Orangish stars which are slightly cooler than our Sun. Some K stars are giants and supergiants, such as Arcturus, while others, like Alpha Centauri B, are main sequence stars. These make up 1 in 8 of the main sequence stars in the solar neighborhood.</desc>
+		</class>
+		<class name="M" color="Red">
+			<luminosity>0.08</luminosity>
+			<temperature variance="1300">2400</temperature>
+			<diams>0.6</diams>
+			<desc>By far the most common class. At least 80% of the main sequence stars in the solar neighborhood are red dwarfs such as Proxima Centauri. M is also host to most giants and some supergiants such as Antares and Betelgeuse , as well as Mira variables. The late-M group holds hotter brown dwarfs that are above the L spectrum. This is usually in the range of M6.5 to M9.5.</desc>
+		</class>
+	</stars>
+</traveller>

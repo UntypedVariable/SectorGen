@@ -1,0 +1,2 @@
+23-08-2018 disabled func sectorgen.py Hexgrid.import_sector, pending rewrite
+24-08-2018 completed proof of concept of UWP++, moving on to load rewrite

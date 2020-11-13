@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<traveller>
+	<reference>
+		<astronomical_unit>149597870.7</astronomical_unit>
+		<sol_luminosity>1</sol_luminosity>
+		<sol_temperature>5800</sol_temperature>
+		<sol_diameter>1400000</sol_diameter>
+	</reference>
+	<stars>
+		<class name="O" weight="1">
+			<color>Blue</color>
+			<luminosity>30000.0</luminosity>
+			<temperature_multiplier>5.0</temperature_multiplier>
+			<temperature_base>30000</temperature_base>
+			<temperature_range>300000</temperature_range>
+			<diam_multiplier>6.6</diam_multiplier>
+			<description>Very hot and very luminous, being bluish in color; in fact, most of their output is in the ultraviolet range. These are the rarest of all main sequence stars, constituting as few as 1 in 3,000,000 in the solar neighborhood O-stars shine with a power over a million times our Sun's output. Because they are so huge, class O stars burn through their hydrogen fuel very quickly, and are the first stars to leave the main sequence.</description>
+		</class>
+		<class name="B" weight="2">
+			<color>Blue-White</color>
+			<luminosity>25.0</luminosity>
+			<temperature_multiplier>3.0</temperature_multiplier>
+			<temperature_base>10000</temperature_base>
+			<temperature_range>20000</temperature_range>
+			<diam_multiplier>4.2</diam_multiplier>
+			<description>Extremely luminous and blue. As O and B stars are so powerful, they only live for a very short time, and thus they do not stray far from the area in which they were formed. These stars tend to cluster together in what are called OB associations, which are associated with giant molecular clouds. The Orion OB1 association occupies a large portion of a spiral arm of our galaxy and contains many of the brighter stars of the constellation Orion. They constitute about 1 in 800 main sequence stars in the solar neighborhood.</description>
+		</class>
+		<class name="A" weight="6">
+			<color>White</color>
+			<luminosity>5.0</luminosity>
+			<temperature_multiplier>1.5</temperature_multiplier>
+			<temperature_base>7500</temperature_base>
+			<temperature_range>2500</temperature_range>
+			<diam_multiplier>1.6</diam_multiplier>
+			<description>Amongst the more common naked eye stars, and are white or bluish-white. They comprise about 1 in 160 of the main sequence stars in the solar neighborhood.</description>
+		</class>
+		<class name="F" weight="31">
+			<color>Yellow-White</color>
+			<luminosity>1.5</luminosity>
+			<temperature_multiplier>1.25</temperature_multiplier>
+			<temperature_base>6000</temperature_base>
+			<temperature_range>1500</temperature_range>
+			<diam_multiplier>1.3</diam_multiplier>
+			<description>These stars' color is white with a slight tinge of yellow. These represent about 1 in 32 of the main sequence stars in the solar neighborhood.</description>
+		</class>
+		<class name="G" weight="75">
+			<color>Yellow</color>
+			<luminosity>1.0</luminosity>
+			<temperature_multiplier>1.0</temperature_multiplier>
+			<temperature_base>5200</temperature_base>
+			<temperature_range>800</temperature_range>
+			<diam_multiplier>1.0</diam_multiplier>
+			<description>The best known, if only for the reason that Sol (Terra) is of this class. Supergiant stars often swing between O or B (blue) and K or M (red). While they do this, they do not stay for long in the G classification as this is an extremely unstable place for a supergiant to be. G stars represent about 1 in 13 of the main sequence stars in the solar neighborhood.</description>
+		</class>
+		<class name="K" weight="125">
+			<color>Orange</color>
+			<luminosity>0.6</luminosity>
+			<temperature_multiplier>0.75</temperature_multiplier>
+			<temperature_base>2700</temperature_base>
+			<temperature_range>1500</temperature_range>
+			<diam_multiplier>0.8</diam_multiplier>
+			<description>Orangish stars which are slightly cooler than our Sun. Some K stars are giants and supergiants, such as Arcturus, while others, like Alpha Centauri B, are main sequence stars. These make up 1 in 8 of the main sequence stars in the solar neighborhood.</description>
+		</class>
+		<class name="M" weight="760">
+			<color>Red</color>
+			<luminosity>0.08</luminosity>
+			<temperature_multiplier>0.5</temperature_multiplier>
+			<temperature_base>2400</temperature_base>
+			<temperature_range>1300</temperature_range>
+			<diam_multiplier>0.6</diam_multiplier>
+			<description>By far the most common class. At least 80% of the main sequence stars in the solar neighborhood are red dwarfs such as Proxima Centauri. M is also host to most giants and some supergiants such as Antares and Betelgeuse , as well as Mira variables. The late-M group holds hotter brown dwarfs that are above the L spectrum. This is usually in the range of M6.5 to M9.5.</description>
+		</class>
+	</stars>
+	<mainworld>
+		<criteria priority="1">
+			<habZone>True</habZone>
+			<size>4-9</size>
+			<atmosphere>3-9</atmosphere>
+		</criteria>
+		<criteria priority="2">
+			<habZone>True</habZone>
+		</criteria>
+		<criteria priority="3">
+			<size>4-9</size>
+			<atmosphere>3-9</atmosphere>
+			<orbit>1-20</orbit>
+		</criteria>
+	</mainworld>
+</traveller>

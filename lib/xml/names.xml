@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<traveller>
+	<stars>
+		<!--memes/youtubers/other bullshit-->
+    <name>Plott</name>
+    <name>Savidan</name>
+    <name>Avizandum</name>
+		<!--ww1-->
+		<name>Liege</name>
+		<name>Frontiers</name>
+		<name>Mulhouse</name>
+		<name>Lorraine</name>
+		<name>Ardennes</name>
+		<name>Charleroi</name>
+		<name>Maubeuge</name>
+		<name>Cateau</name>
+		<name>Guise</name>
+		<name>St. Quentin</name>
+		<name>Marne</name>
+		<name>Aisne</name>
+		<name>Antwerp</name>
+		<name>Albert</name>
+		<name>Arras</name>
+		<name>Yser</name>
+		<name>Ypres</name>
+		<name>Champagne</name>
+		<name>Neuve Chapelle</name>
+		<name>Artois</name>
+		<name>Loos</name>
+		<name>Verdun</name>
+		<name>Hulluch</name>
+		<name>Somme</name>
+		<name>Fromelles</name>
+		<name>Pozieres</name>
+		<name>Ginchy</name>
+		<name>Nivelle</name>
+		<name>Vimy</name>
+		<name>Messines</name>
+		<name>Passchendaele</name>
+		<name>Malmaison</name>
+		<name>Cambrai</name>
+		<name>Spring</name>
+		<name>Lys</name>
+		<name>Estaires</name>
+		<name>Cantigny</name>
+		<name>Belleau Wood</name>
+		<name>Soissons</name>
+		<name>Chateau-Thierry</name>
+		<name>Amiens</name>
+		<name>Saint-Mihiel</name>
+		<name>Epehy</name>
+		<name>Hindenburg</name>
+		<name>Meuse-Argonne</name>
+		<name>Sambre</name>
+		<!--ww1 italy-->
+		<name>Isonzo</name>
+		<name>Asiago</name>
+		<name>Gorizia</name>
+		<name>Caporetto</name>
+		<name>Piave</name>
+		<name>Veneto</name>
+		<!--ww1 eastern front-->
+		<name>Stalluponen</name>
+		<name>Gumbinnen</name>
+		<name>Tannenberg</name>
+		<name>Galicia</name>
+		<name>Masuria</name>
+		<name>Vistula</name>
+		<name>Lodz</name>
+		<name>Limanowa</name>
+		<name>Przemysl</name>
+		<name>Bolimov</name>
+		<name>Sventiany</name>
+		<name>Naroch</name>
+		<name>Brusilov</name>
+		<name>Kerensky</name>
+		<name>Faustschlag</name>
+		<!--ww1 romania-->
+		<name>Transylvania</name>
+		<name>Turtucaia</name>
+		<name>Dobrich</name>
+		<name>Cobadin</name>
+		<name>Sibiu</name>
+		<name>Olt</name>
+		<name>Turnu Rosu</name>
+		<name>Flamanda</name>
+		<name>Brasov</name>
+		<name>Bran-Campulung</name>
+		<name>Prahova</name>
+		<name>Oituz</name>
+		<name>Jiu</name>
+		<name>Vulcan</name>
+		<name>Targu Jiu</name>
+		<name>Robanesti</name>
+		<name>Bucharest</name>
+		<name>Prunaru</name>
+		<name>Arges</name>
+		<name>Ramnicu Sarat</name>
+		<name>Tulcea</name>
+		<name>Marasti</name>
+		<name>Marasesti</name>
+		<!--ww1 caucasus-->
+		<name>Sarikamish</name>
+		<name>Manzikert</name>
+		<name>Kara Killisse</name>
+		<name>Koprukoy</name>
+		<name>Erzurum</name>
+		<name>Erzincan</name>
+		<name>Baku</name>
+		<!--ww1 serbia-->
+		<name>Cer</name>
+		<name>Drina</name>
+		<name>Kolubara</name>
+		<name>Morava</name>
+		<name>Kosovo</name>
+		<name>Ovche Pole</name>
+		<!--ww1 gallipoli-->
+		<name>Nek</name>
+		<name>Chunuk Bair</name>
+		<name>Gully Ravine</name>
+		<name>Gallipoli</name>
+		<name>Krithia</name>
+		<name>Sari Bair</name>
+		<name>Lone Pine</name>
+		<name>Scimitar</name>
+		<name>Anzac</name>
+		<name>Helles</name>
+		<name>Krithia</name>
+		<name>Dardanelles</name>
+		<!--ww1 macedonia-->
+		<name>Krivolak</name>
+		<name>Doiran</name>
+		<name>Florina</name>
+		<name>Struma</name>
+		<name>Monastir</name>
+		<name>Malka Nidzhe</name>
+		<name>Kajmakchalan</name>
+		<name>Cerna</name>
+		<name>Skra-di-Legen</name>
+		<name>Vardar</name>
+		<name>Dobro Pole</name>
+		<!--ww1 sinai/palestine-->
+		<name>Suez</name>
+		<name>Romani</name>
+		<name>Magdhaba</name>
+		<name>Rafa</name>
+		<name>Mughar</name>
+		<name>Jerusalem</name>
+		<name>Damascus</name>
+		<name>Gaza</name>
+		<name>Beersheba</name>
+		<name>Megiddo</name>
+		<!--ww1 mesopotamia-->
+		<name>Fao</name>
+		<name>Basra</name>
+		<name>Qurna</name>
+		<name>Amara</name>
+		<name>Nasiriyeh</name>
+		<name>Es Sinn</name>
+		<name>Ctesiphon</name>
+		<name>Kut</name>
+		<name>Sheikh Sa'ad</name>
+		<name>Wadi</name>
+		<name>Hanna</name>
+		<name>Dujaila</name>
+		<name>Khanaqin</name>
+		<name>Baghdad</name>
+		<name>Samarrah</name>
+		<name>Jebel Hamlin</name>
+		<name>Istabulat</name>
+		<name>Ramadi</name>
+		<name>Tikrit</name>
+		<name>Sharqat</name>
+		<!--ww1 africa-->
+		<name>Cameroon</name>
+		<name>Namibia</name>
+		<name>Togo</name>
+		<name>Tanga</name>
+		<name>Bee</name>
+		<name>Rufiji</name>
+		<name>Kilimanjaro</name>
+		<name>Sandfontein</name>
+		<!--ww1 naval/ atlantic-->
+		<name>Heligoland</name>
+		<name>Coronel</name>
+		<name>Falkland</name>
+		<name>Scarborough</name>
+		<name>Hartlepool</name>
+		<name>Whitby</name>
+		<name>Dogger</name>
+		<name>Otranto</name>
+		<name>Jutland</name>
+		<name>Dover</name>
+		<name>Zeebrugge</name>
+		<!--ww1 naval/ mediteranean-->
+		<name>Goeben</name>
+		<name>Breslau</name>
+		<!--ww1 naval/ asia-pacific-->
+		<name>Rabaul</name>
+		<name>Tsingtao</name>
+		<name>Penang</name>
+		<name>Cocos</name>
+		<!--100yearswar-->
+		<name>Cadzand</name>
+		<name>Arnemuiden</name>
+		<name>Sluys</name>
+		<name>Saint-Omer</name>
+		<name>Tournai</name>
+		<name>Champtoceaux</name>
+		<name>Brest</name>
+		<name>Morlaix</name>
+		<name>Auberoche</name>
+		<name>Caen</name>
+		<name>St Pol de Leon</name>
+		<name>Blanchetaque</name>
+		<name>Crecy</name>
+		<name>Neville</name>
+		<name>Calais</name>
+		<name>Roche-Derrien</name>
+		<name>Espagnol</name>
+		<name>Ardres</name>
+		<name>Saint-Jean-d'Angely</name>
+		<name>Ardres</name>
+		<name>Thirty</name>
+		<name>Mauron</name>
+		<name>Lusignan</name>
+		<name>Comborn</name>
+		<name>Montmuran</name>
+		<name>Poitiers</name>
+		<name>Cocherel</name>
+		<name>Navarette</name>
+		<name>Montiel</name>
+		<name>Limoges</name>
+		<name>Pontvallain</name>
+		<name>Rochelle</name>
+		<name>Chiset</name>
+		<name>Roosebeke</name>
+		<name>Aljubarrota</name>
+		<name>Blackpool Sands</name>
+		<name>Harfleur</name>
+		<name>Agincourt</name>
+		<name>Rouen</name>
+		<name>Fresnay</name>
+		<name>Bauge</name>
+		<name>Meaux</name>
+		<name>Cravant</name>
+		<name>Brossiniere</name>
+		<name>Verneuil</name>
+		<name>St. James</name>
+		<name>Orleans</name>
+		<name>Herrings</name>
+		<name>Jargeau</name>
+		<name>Meung-sur-Loire</name>
+		<name>Beaugency</name>
+		<name>Patay</name>
+		<name>Gerberoy</name>
+		<name>Formigny</name>
+		<name>Castillon</name>
+		<!--spain/northafrican cities-->
+    <name>Murcia</name>
+    <name>Alcala</name>
+    <name>Almeria</name>
+    <name>Seville</name>
+    <name>Malaga</name>
+    <name>Salamanca</name>
+    <name>Cadiz</name>
+    <name>Huelva</name>
+    <name>Toledo</name>
+    <name>Caceres</name>
+    <name>Evora</name>
+    <name>Faro</name>
+    <name>Ciudad</name>
+    <name>Cuenca</name>
+    <name>Castellon</name>
+    <name>Lorca</name>
+    <name>Cartagena</name>
+    <name>Elche</name>
+    <name>Badajoz</name>
+    <name>Ecija</name>
+    <name>Jaen</name>
+    <name>Granada</name>
+    <name>Marbella</name>
+    <name>Albufeira</name>
+    <name>Teruel</name>
+    <name>Casablanca</name>
+    <name>Safi</name>
+    <name>Essaouira</name>
+    <name>Agadir</name>
+    <name>Meknes</name>
+    <name>Rabat</name>
+    <name>Taza</name>
+    <name>Tetouan</name>
+    <name>Melilla</name>
+    <name>Nador</name>
+    <name>Saidia</name>
+    <name>Oujda</name>
+    <name>Oran</name>
+    <name>Marrakesh</name>
+    <name>Zagora</name>
+    <name>Mhamid</name>
+    <name>Errachidia</name>
+    <name>Algiers</name>
+    <name>Tiaret</name>
+    <name>Mercheria</name>
+    <name>Djelfa</name>
+    <name>Batna</name>
+    <name>Biska</name>
+    <name>Khenchela</name>
+    <name>Tebessa</name>
+    <name>Hassi Messaoud</name>
+    <name>Skikda</name>
+    <name>Sousse</name>
+    <name>Sfax</name>
+    <name>Jebil</name>
+    <name>Tripoli</name>
+    <name>Tajoura</name>
+    <name>Zliten</name>
+    <name>Misrata</name>
+    <name>Tiji</name>
+    <name>Nalut</name>
+    <name>Alzintan</name>
+    <name>Misrata</name>
+    <name>Krarim</name>
+    <name>Kairouan</name>
+    <name>Sirte</name>
+    <name>Suluq</name>
+    <name>Derna</name>
+    <name>Tobruk</name>
+    <name>Kambut</name>
+    <name>Bardiyah</name>
+    <name>Jakharrad</name>
+    <name>Awjilah</name>
+    <name>Jalu</name>
+    <name>Siwa</name>
+    <name>Ajdabiya</name>
+    <name>Cara</name>
+    <name>Alexandria</name>
+    <name>Tanta</name>
+    <name>Salamut</name>
+    <name>Agamy</name>
+    <name>Mansoura</name>
+    <name>Said</name>
+    <name>Minya</name>
+    <name>Asyut</name>
+    <name>Sohag</name>
+    <name>Beni Suef</name>
+    <name>Aqaba</name>
+    <name>Hurghada</name>
+		<!--caspian sea-->
+    <name>Izberbash</name>
+    <name>Derbent</name>
+    <name>Quba</name>
+    <name>Sumqayit</name>
+    <name>Baku</name>
+    <name>Hovsan</name>
+    <name>Shirvan</name>
+    <name>Makhachkala</name>
+    <name>Aktau</name>
+    <name>Garabogazkoel</name>
+    <name>Lankaran</name>
+    <name>Masalli</name>
+    <name>Salyan</name>
+    <name>Turkmenbashi</name>
+    <name>Awaza</name>
+    <name>Sevchenko</name>
+    <name>Zhetybay</name>
+    <name>Kulandy</name>
+    <name>Ustyurt</name>
+    <name>Kyzan</name>
+    <name>Shebir</name>
+    <name>Shetpe</name>
+    <name>Shayyr</name>
+    <name>Lagan</name>
+    <name>Chalus</name>
+    <name>Rasht</name>
+    <name>Lahijan</name>
+    <name>Ramsar</name>
+    <name>Amol</name>
+    <name>Behshahr</name>
+    <name>Gorgan</name>
+    <name>Azadshair</name>
+    <name>Qaemshahr</name>
+    <name>Qazvin</name>
+    <name>Kum Dag</name>
+    <name>Bereket</name>
+    <name>Serdar</name>
+    <name>Beharly</name>
+    <name>Ashgabat</name>
+    <name>Yashlyk</name>
+    <name>Quchan</name>
+    <name>Esfaraeyen</name>
+    <name>Joveyn</name>
+    <name>Sabzevar</name>
+    <name>Neyshabur</name>
+    <name>Dargaz</name>
+    <name>Gokdepe</name>
+    <name>Darvaza</name>
+    <name>Bardaskan</name>
+    <name>Kondor</name>
+    <name>Kashmar</name>
+	</stars>
+</traveller>

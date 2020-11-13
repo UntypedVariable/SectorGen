@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traveller>
+    <!--
+    A simple J-1/J-2 trade route consists of two worlds
+    that each have one or more UNIQUE trade codes from
+    a set of trade codes.
+    -->
+  <trade>
+    <trade_route>
+      <set>
+        <trade_code>In</trade_code>
+        <trade_code>Ht</trade_code>
+      </set>
+      <set>
+        <trade_code>As</trade_code>
+        <trade_code>De</trade_code>
+        <trade_code>Ic</trade_code>
+        <trade_code>Ni</trade_code>
+      </set>
+    </trade_route>
+    <trade_route>
+      <set>
+        <trade_code>Hi</trade_code>
+        <trade_code>Ri</trade_code>
+      </set>
+      <set>
+        <trade_code>Ag</trade_code>
+        <trade_code>Ga</trade_code>
+        <trade_code>Wa</trade_code>
+      </set>
+    </trade_route>
+  </trade>
+  <politics>
+    <!-- still gotta figure how to implement this -->
+  </politics>
+</traveller>
