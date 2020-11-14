@@ -35,3 +35,4 @@ Procedural Sector Generation for Traveller.
 ### inspect
 
 * entering "test" instead of a hex location provides a test-output
+* leading zeroes are required. example: `-i 0101`
