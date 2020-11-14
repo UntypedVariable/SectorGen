@@ -1,6 +1,7 @@
 # SectorGen
 
 Procedural Sector Generation for Traveller.
+
 https://github.com/UntypedVariable/SectorGen
 
 
