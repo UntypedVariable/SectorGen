@@ -62,7 +62,7 @@ class App:
     SO='so'
     HS='hs'
     BA='ba'
-    def __init__(self,new=False,name="noname",mode=None,db_uwp=None,db_esp=None):
+    def __init__(self,new=False,name="noname",mode=None,db_uwp=None,db_esp=None,quirk_chance=0):
         global path
         self.name          =None
         self.star          =None
@@ -72,6 +72,8 @@ class App:
         self.asteroid_belts=0
         self.jovian_planets=0
         self.db_esp=db_esp
+        self.quirk_chance  = quirk_chance
+        
         if db_esp==None and __name__=="__main__":
             from sys import argv
             from testing_tools.db_parse import App as XML_Parse
@@ -219,7 +221,7 @@ class App:
                 mainworld_found=True
                 if self.populated:
                     planetoid.populated=self.populated
-                    planetoid.new(from_scratch=False)
+                    planetoid.new(from_scratch=False,quirk_chance=self.quirk_chance)
                 planetoid.pos=0
                 if planetoid.type=="satellite": planetoid.parent.pos=0
                 if  planetoid.tech_level_civilian_environment>=7\
@@ -233,7 +235,7 @@ class App:
             elif populated_worlds > 0:
                 populated_worlds -= 1
                 planetoid.populated=True
-                planetoid.new(from_scratch=False,max_pop=self.mainworld.population-1,max_tl=self.mainworld.tech_level-1)
+                planetoid.new(from_scratch=False,max_pop=self.mainworld.population,max_tl=self.mainworld.tech_level)
             return mainworld_found, populated_worlds
         #
         # MAINWORLD CRITERIA
@@ -356,7 +358,7 @@ class App:
             with open(file_out.format(name=self.name),'w+',encoding='utf8') as f:
                 f.write(rs)
         else:
-            self.star.show()
+            print( self.star.show() )
             print(rs)
 
 

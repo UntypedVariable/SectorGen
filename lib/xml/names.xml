@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <traveller>
 	<stars>
-		<!--memes/youtubers/other bullshit-->
+		<!--memes/tubers/vidya/other bullshit-->
     <name>Plott</name>
     <name>Savidan</name>
     <name>Avizandum</name>
+    <name>Burges</name>
+    <name>Horner</name>
+    <name>Ventrue</name>
+    <name>Yuggoth</name>
+    <name>Anu</name>
+    <name>Tovarish</name>
+    <name>Funicular</name>
+    <name>Donau</name>
+    <name>Phoenix</name>
+    <name>Fireball</name>
+    <!--middle- & east-asia-->
+    <name>Qing</name>
+    <name>Bouyei</name>
+    <name>Miao</name>
+    <name>Ho Chi Minh</name>
+    <name>Selon</name>
+    <name>Yamato</name>
+    <name>Shenzen</name>
 		<!--ww1-->
 		<name>Liege</name>
 		<name>Frontiers</name>

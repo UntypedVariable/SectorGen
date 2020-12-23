@@ -231,21 +231,21 @@ class App:
         star += 'Color:'            .ljust(justification_l) + self.Color                             + '\n'
         star += 'Temperature:'      .ljust(justification_l) + str( self.Temperature )                .rjust(justification_r) + ' K' + '\n'
         star += 'Luminosity:'       .ljust(justification_l) + str( self.Luminosity  )                .rjust(justification_r) + ' L' + '\n'
-        star += 'Diameter:'         .ljust(justification_l) + str( self.Diameter    )                .rjust(justification_r) + ' Km'+ '\n'
+        star += 'Diameter:'         .ljust(justification_l) + str( int(self.Diameter)    )                .rjust(justification_r) + ' Km'+ '\n'
         star += 'HabZone Inner:'    .ljust(justification_l) + str( self.toPAU(self.HabInner ) )      .rjust(justification_r) + ' %AU'+ '\n'
         star += 'HabZone Center:'   .ljust(justification_l) + str( self.toPAU(self.HabCenter) )      .rjust(justification_r) + ' %AU'+ '\n'
         star += 'HabZone Outer:'    .ljust(justification_l) + str( self.toPAU(self.HabOuter ) )      .rjust(justification_r) + ' %AU'+ '\n'
         star += ' 70 Diameters:'    .ljust(justification_l) + str( self.toPAU(self.DiamZone70  ) )   .rjust(justification_r) + ' %AU'+ '\n'
         star += '100 Diameters:'    .ljust(justification_l) + str( self.toPAU(self.DiamZone100 ) )   .rjust(justification_r) + ' %AU'+ '\n'
         star += '150 Diameters:'    .ljust(justification_l) + str( self.toPAU(self.DiamZone150 ) )   .rjust(justification_r) + ' %AU'+ '\n'
-        star += 'Planetoids:'       .ljust(justification_l) + str( self.Planetoids )                 .rjust( 2)         + '\n'
-        for planet in sorted(self.Planets):
-            star += '        ' + str(planet[0]).rjust(6) + ' ' + planet[1].rjust(justification_r) + '  ' + planet[2].ljust(6) + '\n'
+        if self.Planetoids>0:
+            star += 'Planetoids:'       .ljust(justification_l) + str( self.Planetoids )                 .rjust( 2)         + '\n'
+            for planet in sorted(self.Planets):
+                star += '        ' + str(planet[0]).rjust(6) + ' ' + planet[1].rjust(justification_r) + '  ' + planet[2].ljust(6) + '\n'
         if src!=None:
             pass
         else:
-            print( star )
-        pass
+            return star
 
 
 def roll( dice, sides=6, mode='sum' ):

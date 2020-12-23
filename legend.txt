@@ -57,7 +57,7 @@ SO (Space Opera)
     reduce hydro roll by 6
   planets with atmo 2, 3, 11 or 12:
     reduce hydro roll by 4
-  planet quirk occurs at 35% incidence
+  planet quirk occurs at 35% incidence // or 50% incidence???
 
 BA (Barren) [used for uninhabited worlds]
   population  = 0
