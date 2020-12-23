@@ -53,6 +53,7 @@ class App:
     VERBOSE  ='v'
     MAINWORLD='mw'
     SYSTEM   ='sy'
+    STAR     ='s'
     def __init__(self,src=None,mode=None,depth=None,config=config_src):
         # config BEGIN
         #   prep config
@@ -72,7 +73,7 @@ class App:
         if mode ==None: self.mode      =self.config.get("DEFAULT","mode"  ).strip()
         else:           self.mode      =mode
         if depth==None: self.depth     =self.config.get("DEFAULT","depth" ).strip()
-        else:           self.depth     =mode
+        else:           self.depth     =depth
         uwp_path                       =self.config.get("DEFAULT","db_uwp").strip().replace("/",SLASH)
         esp_path                       =self.config.get("DEFAULT","db_esp").strip().replace("/",SLASH)
         #   [FORMATING]
@@ -120,8 +121,8 @@ class App:
         return rs
     def __inspect_world(self,world,mode):
         rs=""
-        if mode==self.VERBOSE: para=2
-        elif mode==self.TERSE: para=1
+        if   mode==self.VERBOSE: para=2
+        elif mode==self.TERSE:   para=1
         
         fj_Tvl=self.__get_fj_Tvl(world,mode)
         fj_SAH=self.__get_fj_SAH(world,mode)
@@ -144,23 +145,30 @@ class App:
     def __get_fj_Tvl(self,world,mode,indent=None,just_width=None):
         if indent    ==None: indent_n  =self.indent
         else:                indent_n  =     indent
-        indent    =     indent_n*" "
+        indent       = indent_n*" "
         if just_width==None: just_width=self.just_width
 
-        starport     =                  world.starport
-        travel_code  =                  world.travel_code
-
+        starport     =  world.starport
+        travel_code  =  world.travel_code
+        
+        block_indent=0
+        line_up=0
+        dSPT_push=0
+        dTRC_push=0
+        dSPT_formatted=("None")
+        dTRC_formatted=("None")
+        
         if mode==self.VERBOSE:
-            block_indent=2
+            block_indent=0
             line_up=14
-            dSPT_push=16
             dTRC_push=16
-            dSPT=(2*indent+"Starport".ljust(line_up-indent_n)+"({})\n"    ,\
-                  3*indent+"Quality       - {quality}\n"  ,\
-                  3*indent+"Berthing Cost - {berthing}\n" ,\
-                  3*indent+"Fuel          - {fuel}\n"     ,\
-                  3*indent+"Facilities    - {facilities}"  )
-            dTRC=(indent+"Travel Code".ljust(line_up)+"({}) - {tcode_info}\n", "" )
+            dSPT_push=16
+            dTRC=(  indent+"Travel Code".ljust(line_up)+"  ({}) - {tcode_info}\n", "" )
+            dSPT=(1*indent+"Starport".ljust(line_up-indent_n)+"    ({})\n"           ,\
+                  2*indent+"Quality           - {quality}\n"                         ,\
+                  2*indent+"Berthing Cost     - {berthing}\n"                        ,\
+                  2*indent+"Fuel              - {fuel}\n"                            ,\
+                  2*indent+"Facilities        - {facilities}"                         )
         elif mode==self.TERSE:
             block_indent=1
             line_up=14
@@ -184,7 +192,7 @@ class App:
             if dom_travel_code[XML_Parse.ATTR_TAG]['code'].lower()==travel_code.lower():
                 travel_code_s=dom_travel_code[XML_Parse.CDATA]
                 break
-
+        
         if mode==self.VERBOSE:
             dSPT_formatted=(dSPT[0].format(starport.upper())     ,\
                             dSPT[1].format(quality=quality)      ,\
@@ -200,8 +208,12 @@ class App:
         for line in dSPT_formatted: dSPT_formatted_justified+=justificate(line,dSPT_push+indent_n*(block_indent+1),just_width)
         dTRC_formatted_justified=""
         for line in dTRC_formatted: dTRC_formatted_justified+=justificate(line,dTRC_push+indent_n*(block_indent+1),just_width)
-
-        rs ="World Name".ljust(line_up)+indent+3*" "+" - "+world.name+"\n"
+        
+        WN_bump=0
+        if   mode==self.VERBOSE: WN_bump=5
+        elif mode==self.TERSE  : WN_bump=3
+        
+        rs ="World Name".ljust(line_up)+indent+WN_bump*" "+" - "+world.name+"\n"
         rs+=dTRC_formatted_justified+dSPT_formatted_justified
         return rs
     def __get_fj_SAH(self,world,mode,indent=None,just_width=None):
@@ -214,23 +226,23 @@ class App:
         size         =                   world.size_str
         atmosphere   = self.HEX_EXPANDED[world.atmosphere   ]
         hydrographics= self.HEX_EXPANDED[world.hydrographics]
-
+        
         # establish Templates
         if mode==self.VERBOSE:
-            block_indent=2
-            dWPs_push=11
-            dWPa_push=14
-            dWPh_push=16
-            dWPs=(     2*indent+"Size ({size})"                 ,\
-                  "\n"+3*indent+"Type     - {type}"             ,\
-                  "\n"+3*indent+"Diameter - {diameter}" )
-            dWPa=("\n"+2*indent+"Atmosphere ({atmosphere})"     ,\
-                  "\n"+3*indent+"Type        - {type}"          ,\
-                  "\n"+3*indent+"Pressure    - {pressure}"      ,\
-                  "\n"+3*indent+"Description - {desc}"           )
-            dWPh=("\n"+2*indent+"Hydrographics ({hydrographics})"   ,\
-                  "\n"+3*indent+"Type          - {type}"            ,\
-                  "\n"+3*indent+"Surface Water - {surfacewater}"     )
+            block_indent=3
+            dWPs_push=14+indent_n
+            dWPa_push=14+indent_n
+            dWPh_push=14+indent_n
+            dWPs=(     1*indent+"Size            ({size})"          ,\
+                  "\n"+2*indent+"Type              - {type}"        ,\
+                  "\n"+2*indent+"Diameter          - {diameter}"     )    
+            dWPa=("\n"+1*indent+"Atmosphere      ({atmosphere})"    ,\
+                  "\n"+2*indent+"Type              - {type}"        ,\
+                  "\n"+2*indent+"Pressure          - {pressure}"    ,\
+                  "\n"+2*indent+"Description       - {desc}"         )
+            dWPh=("\n"+1*indent+"Hydrographics   ({hydrographics})" ,\
+                  "\n"+2*indent+"Type              - {type}"        ,\
+                  "\n"+2*indent+"Surface Water     - {surfacewater}" )
         elif mode==self.TERSE:
             block_indent=1
             line_up=14
@@ -263,7 +275,10 @@ class App:
             if dom_hydrographics[XML_Parse.ATTR_TAG]['level'].lower()==hydrographics:
                 hydrographics_info=(dom_hydrographics['type'][XML_Parse.CDATA],dom_hydrographics['surfacewater'][XML_Parse.CDATA])
                 break
-
+        
+        dWPs_formatted=(None,None,None)
+        dWPa_formatted=(None,None,None)
+        dWPh_formatted=(None,None,None)
         # allocate Info to Templates
         if mode==self.VERBOSE:
             dWPs_formatted=(dWPs[0].format(size=size.upper()),dWPs[1].format(type=size_info[0]),dWPs[2].format(diameter=size_info[1]))
@@ -290,9 +305,10 @@ class App:
         indent    =     indent_n*" "
         if just_width==None: just_width=self.just_width
 
-        climate      =                  world.climate
-        orbit        =                  world.orbit
-        gravity      =                  world.gravity
+        climate      =  world.climate
+        orbit        =  world.orbit
+        band         =  world.band
+        gravity      =  world.gravity
         
         climate_type=""
         climate_temp=""
@@ -311,15 +327,22 @@ class App:
                 climate_desc=dom_climate['desc'       ][XML_Parse.CDATA]
                 break
         # retrieve Orbit Info
-        for dom_orbit in self.TRAVELLER['orbit']['orbit']:
-            digit_check,check_list_gt_lt=splitup(dom_orbit[XML_Parse.ATTR_TAG]['level'],giveTup=True)
-            go=False
-            if str(orbit) in digit_check: go=True
-            for check_tup in check_list_gt_lt:
-                if int(orbit)>= int(check_tup[0]) and int(orbit)<= int(check_tup[1]): go=True
-            if go:
-                orbit_s=dom_orbit[XML_Parse.CDATA]
-                break
+        #for dom_orbit in self.TRAVELLER['orbit']['orbit']:
+        #    digit_check,check_list_gt_lt=splitup(dom_orbit[XML_Parse.ATTR_TAG]['level'],giveTup=True)
+        #    go=False
+        #    if str(orbit) in digit_check: go=True
+        #    for check_tup in check_list_gt_lt:
+        #        if int(orbit)>= int(check_tup[0]) and int(orbit)<= int(check_tup[1]): go=True
+        #    if go:
+        #        orbit_s=dom_orbit[XML_Parse.CDATA]
+        #        break
+        if   band.startswith("near" ): orbit_s="Inner World"
+        elif band.startswith("mid"  ): orbit_s="Median World"
+        elif band.startswith("far"  ): orbit_s="Far World"
+        elif band.startswith("rogue"): orbit_s="Rogue World"
+        else:                          orbit_s=""
+        if orbit >= world.parent.star.HabInner/world.parent.star.AU*100 and orbit <= world.parent.star.HabOuter/world.parent.star.AU*100:
+            orbit_s+= " \\ Habitable Zone"
         # retrieve Gravity Info
         for dom_gravity in self.TRAVELLER['gravity']['gravity']:
             digit_check,check_list_gt_lt=splitup(dom_gravity[XML_Parse.ATTR_TAG]['level'],giveTup=True)
@@ -333,16 +356,16 @@ class App:
 
         # format InfoHydrographics
         if mode==self.VERBOSE:
-            block_indent=2
+            block_indent=3
             s_COGc_push=14+indent_n
             s_COGo_push=14+indent_n
             s_COGg_push=14+indent_n
-            s_COGc=(2*indent+"Climate ({})\n",\
-                    3*indent+"Type        - {type}\n",\
-                    3*indent+"Temperature - {temp}\n",\
-                    3*indent+"Description - {desc}\n" )
-            t_COGo=indent+indent+"Orbit   "+indent+"({}) - ~{} %AU to Star, {}\n"
-            t_COGg=indent+indent+"Gravity "+indent+"({}) - {}\n"
+            s_COGc=(1*indent+"Climate      "+indent+" ({})\n",\
+                    2*indent+"Type         "+indent+"   - {type}\n",\
+                    2*indent+"Temperature  "+indent+"   - {temp}\n",\
+                    2*indent+"Description  "+indent+"   - {desc}\n" )
+            t_COGo=indent+indent+"Orbit    "+indent+"   ({}) - ~{} %AU to Star, {}\n"
+            t_COGg=indent+indent+"Gravity  "+indent+"   ({}) - {}\n"
         elif mode==self.TERSE:
             block_indent=1
             line_up=14
@@ -362,10 +385,10 @@ class App:
         for line in s_COGc_formatted: s_COGc_formatted_justified+=justificate(line,s_COGc_push+indent_n*(block_indent+1),just_width)
 
         s_COGo_formatted          =t_COGo.format(world.band[:1].upper(),orbit,orbit_s)
-        s_COGo_formatted_justified=justificate(s_COGo_formatted,s_COGo_push+indent_n*block_indent,just_width)
+        s_COGo_formatted_justified=justificate(s_COGo_formatted,s_COGo_push+indent_n*(block_indent+1),just_width)
 
         s_COGg_formatted          =t_COGg.format(self.HEX_EXPANDED[gravity].upper(),gravity_s)
-        s_COGg_formatted_justified=justificate(s_COGg_formatted,s_COGg_push+indent_n*block_indent,just_width)
+        s_COGg_formatted_justified=justificate(s_COGg_formatted,s_COGg_push+indent_n*(block_indent+1),just_width)
 
         # return result
         rs=s_COGc_formatted_justified+s_COGo_formatted_justified+s_COGg_formatted_justified
@@ -382,13 +405,13 @@ class App:
 
         # establish Templates
         if mode==self.VERBOSE:
-            block_indent=2
+            block_indent=4
             dWPg_push=14
-            dWPp= indent+"Population "+indent+"({}) - ~{mod} {type}\n"
-            dWPg=(indent+"Government\n",\
-                  indent+indent+"Type        - {type}\n",\
-                  indent+indent+"Description - {desc}\n",\
-                  indent+indent+"Example     - {example}")
+            dWPp= indent+"Population "+indent+"   ({}) - ~{mod} {type}\n"
+            dWPg=(indent+"Government "+indent+"   ({})\n",\
+                  indent+indent+"Type              - {type}\n",\
+                  indent+indent+"Description       - {desc}\n",\
+                  indent+indent+"Example           - {example}")
         elif mode==self.TERSE:
             block_indent=1
             line_up=14
@@ -411,16 +434,18 @@ class App:
 
         # format Templates
         population_mod=world.parent.population_mod
+        ##adjust for pop=1
+        if population=='1': population_mod=population_mod*10
         dWPp_formatted_justified=dWPp.format(population.upper(), mod=population_mod,type=population_info[0])
 
         if mode==self.VERBOSE:
-            dWPg_formatted=(dWPg[0],dWPg[1].format(type=government_info[0]),dWPg[2].format(desc=government_info[1]),dWPg[3].format(example=government_info[2]))
+            dWPg_formatted=(dWPg[0].format(government.upper()),dWPg[1].format(type=government_info[0]),dWPg[2].format(desc=government_info[1]),dWPg[3].format(example=government_info[2]))
         elif mode==self.TERSE:
             dWPg_formatted=(dWPg[0].format(government.upper(),type=government_info[0]),"")
 
 
         dWPg_formatted_justified=""
-        for line in dWPg_formatted: dWPg_formatted_justified+=justificate(line,dWPg_push+indent_n*block_indent,just_width)
+        for line in dWPg_formatted: dWPg_formatted_justified+=justificate(line,dWPg_push+indent_n*(block_indent+1),just_width)
 
         # return result
         rs=dWPp_formatted_justified+dWPg_formatted_justified
@@ -432,15 +457,15 @@ class App:
         if just_width==None: just_width=self.just_width
 
         if mode==self.VERBOSE:
-            block_indent=2
+            block_indent=4
             dWDITTP_push=14
-            dWDITTP=(indent+"Law Levels\n",\
-                     indent+indent+"Weapons     - {weapons}\n",\
-                     indent+indent+"Drugs       - {drugs}\n",\
-                     indent+indent+"Information - {information}\n",\
-                     indent+indent+"Technology  - {technology}\n",\
-                     indent+indent+"Travellers  - {travellers}\n",\
-                     indent+indent+"Powers      - {powers}")
+            dWDITTP=(1*indent+"Law Levels      ({})\n",\
+                     2*indent+"Weapons       ({}) - {weapons}\n",\
+                     2*indent+"Drugs         ({}) - {drugs}\n",\
+                     2*indent+"Information   ({}) - {information}\n",\
+                     2*indent+"Technology    ({}) - {technology}\n",\
+                     2*indent+"Travellers    ({}) - {travellers}\n",\
+                     2*indent+"Powers        ({}) - {powers}")
 
             weapons,drugs,information,technology,travellers,powers=None,None,None,None,None,None
             weapons_i    =world.law_level_weapons
@@ -472,22 +497,28 @@ class App:
                 for check_tup in check_list_gt_lt:
                     if powers_i>= int(check_tup[0]) and powers_i<= int(check_tup[1]): go+=['powers']
 
-                if "weapons" in go    :
-                  weapons     =dom_law_level['weapons'    ][XML_Parse.CDATA]
-                if "drugs" in go      :
-                  drugs       =dom_law_level['drugs'      ][XML_Parse.CDATA]
-                if "information" in go:
-                  information =dom_law_level['information'][XML_Parse.CDATA]
-                if "technology" in go :
-                  technology  =dom_law_level['technology' ][XML_Parse.CDATA]
-                if "travellers" in go :
-                  travellers  =dom_law_level['travellers' ][XML_Parse.CDATA]
-                if "powers" in go     :
-                    powers      =dom_law_level['powers'   ][XML_Parse.CDATA]
+                if "weapons"     in go :
+                    weapons      =dom_law_level['weapons'    ][XML_Parse.CDATA]
+                if "drugs"       in go :
+                    drugs        =dom_law_level['drugs'      ][XML_Parse.CDATA]
+                if "information" in go :
+                    information  =dom_law_level['information'][XML_Parse.CDATA]
+                if "technology"  in go :
+                    technology   =dom_law_level['technology' ][XML_Parse.CDATA]
+                if "travellers"  in go :
+                    travellers   =dom_law_level['travellers' ][XML_Parse.CDATA]
+                if "powers"      in go :
+                    powers       =dom_law_level['powers'     ][XML_Parse.CDATA]
 
-            dWDITTP_formatted=(dWDITTP[0],dWDITTP[1].format(weapons=weapons),dWDITTP[2].format(drugs=drugs),dWDITTP[3].format(information=information),dWDITTP[4].format(technology=technology),dWDITTP[5].format(travellers=travellers),dWDITTP[6].format(powers=powers))
+            dWDITTP_formatted=(dWDITTP[0].format(self.HEX_EXPANDED[world.law_level].upper()),
+                               dWDITTP[1].format(self.HEX_EXPANDED[weapons_i    ].upper(),weapons=weapons),
+                               dWDITTP[2].format(self.HEX_EXPANDED[drugs_i      ].upper(),drugs=drugs),
+                               dWDITTP[3].format(self.HEX_EXPANDED[information_i].upper(),information=information),
+                               dWDITTP[4].format(self.HEX_EXPANDED[technology_i ].upper(),technology=technology),
+                               dWDITTP[5].format(self.HEX_EXPANDED[travellers_i ].upper(),travellers=travellers),
+                               dWDITTP[6].format(self.HEX_EXPANDED[powers_i     ].upper(),powers=powers))
             dWDITTP_formatted_justified=""
-            for line in dWDITTP_formatted: dWDITTP_formatted_justified+=justificate(line,dWDITTP_push+indent_n*block_indent,just_width)
+            for line in dWDITTP_formatted: dWDITTP_formatted_justified+=justificate(line,dWDITTP_push+indent_n*(block_indent+1),just_width)
 
             rs=dWDITTP_formatted_justified
         elif mode==self.TERSE:
@@ -673,7 +704,9 @@ class App:
             rs=indent*block_indent+"Trade Codes".ljust(line_up)+"    - "+world.trade_codes.strip()
         return rs
     def __inspect_system(self,system,mode):
-        return "system: "+system.name
+        rs = ""
+        rs+= system.star.show()
+        return (rs,None)
 
 
 def findPosInList(list,item):
@@ -690,7 +723,7 @@ def justificate(line,indent,border):
     else:
         p1=line[:border].rfind(" ")+1
         rs+=line[:p1]
-        rs+="\n"+justificate(indent*" "+line[p1:],indent,border)
+        rs+="\n"+justificate(indent*" "+line[p1:].strip(" "),indent,border)
         return rs
 
 

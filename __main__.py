@@ -26,8 +26,10 @@ from tlrm2e.inspect     import App     as Inspector
 
 def main():
     ## inspector
-    inspector_use   = False
-    inspector_hex   = "test"
+    inspector_use       = False
+    inspector_hex       = "test"
+    inspect_verbose     = False
+    inspector_selection = False
     
     ## sectorgen
     sectorgen_use   = False
@@ -43,28 +45,53 @@ def main():
     settingsf       = "{:<"+str(justification)+"}: {}\n"
     
     ## helptext
-    helptext        = "__main__.py --help --generate --draw -i <hex_location> -m <mode:vn,so,hs>"
+    helptext        = "\n  --help --generate --draw --inspect=<hex_location>\n"
+    helptext_g      = "\n-g, --generate\nGenerates a new full sector.\n\nModifiers: -m, --mode ;\n\nMODES:\n  hs = Hard Sci-Fi\n  so = Space Opera\n  vn = Vanilla/Default\n\nEXAMPLE: --generate --mode=hs\n"
+    helptext_d      = "\n-d, --draw\nDraws a hexmap of the current full sector in \"save/sector\".\n\nEXAMPLE: --draw\n"
+    helptext_i      = "\n-i, --inspect\nReturns a readout of the information contained in a specific 4-digit hex-location.\n\nModifiers: -v, --verbose ; -s, --system ;\n\nEXAMPLE: --inspect=1403 --verbose\n"
     try:
-        opts, args = getopt.getopt(argv[1:],"hgdi:m:",["help","generate","draw","inspect=","mode="])
+        opts, args = getopt.getopt(argv[1:],"h:gm:di:vs:",["help=","generate","mode=","draw","inspect=","verbose","selection="])
     except getopt.GetoptError:
         print(helptext)
         exit(2)
     
+    ## SELECTION OF ARGUMENTS
+    
     for opt, arg in opts:
-        if opt == '-h':
-            print(helptext)
-            exit()
-        elif opt in ("-i", "--inspect"):
-            inspector_hex = arg.strip()
-            inspector_use = True
-        elif opt in ("-m", "--mode"):
-            mode = arg.strip()
+        if opt == opt in ("-h", "--help"):
+            try:
+                topic = arg.strip()
+                if   topic in ("g","generate","m","mode"):
+                    print(helptext_g)
+                elif topic in ("d","draw"):
+                    print(helptext_d)
+                elif topic in ("i","inspect","v","verbose","s","selection"):
+                    print(helptext_i)
+            except:
+                print(helptext)
+            exit(0)
+
+
         elif opt in ("-g", "--generate"):
             sectorgen_use   = True
             generate_new    = True
+        elif opt in ("-m", "--mode"):
+            mode = arg.strip()
+
+
         elif opt in ("-d", "--draw"):
             sectorgen_use   = True
             draw_all        = True
+
+
+        elif opt in ("-i", "--inspect"):
+            inspector_hex = arg.strip()
+            inspector_use = True
+        elif opt in ("-v", "--verbose"):
+            inspect_verbose = True
+        elif opt in ("-s", "--selection"):
+            inspector_selection = arg.strip()
+            
     ## settings output
     #s=""
     #s+=settingsf.format("Inspector",    inspector_use)
@@ -85,7 +112,7 @@ def main():
         if sectorgen_use:
             if generate_new:
                 # create sector
-                APP.create_sector()
+                APP.create_sector(mode=mode)
                 # export sector
                 APP.save_sector()
 
@@ -135,8 +162,15 @@ def main():
             # inspection
             from tlrm2e.inspect     import App     as Inspector
             inspector = Inspector()
-            inspected_hex = inspector.inspect(inspector_hex)
-            print(inspected_hex[0])
+            mode=None    
+            if inspect_verbose: mode = inspector.VERBOSE
+            depth=None    
+            if   inspector_selection in ('s','star'):       depth = inspector.SYSTEM
+            elif inspector_selection in ('mw','mainworld'): depth = inspector.MAINWORLD
+            else:                                           depth = None
+            inspected_hex = inspector.inspect(inspector_hex,mode=mode,depth=depth)
+            for info_block in inspected_hex:
+                print(info_block)
     except Exception as e:
         import traceback
         exc = traceback.format_exc()
@@ -168,7 +202,7 @@ class App:
         from configparser       import ConfigParser
         
         # console outputs
-        self.LOADING ="{:<"+str(self.INDENT)+"} [ ...  ]"
+        self.LOADING ="{:<"+str(self.INDENT)+"} [ .... ]"
         self.LOADED  ="{:<"+str(self.INDENT)+"} [ OKAY ]"
 
         # config
@@ -182,12 +216,12 @@ class App:
                 self.config.read_file(f)
         self.configs_loaded=[]
         pass
-    def create_sector(self,system_chance=None,populated_chance=None):
+    def create_sector(self,system_chance=None,populated_chance=None,mode='vn'):
         if not self.CONF_GEN in self.configs_loaded: self.config_load(self.CONF_GEN)
         if system_chance==None:    system_chance   =self.system_chance
         if populated_chance==None: populated_chance=self.populated_chance
         print("Generating sector...",end="\r")
-        self.sectorGenerator.populate(system_chance=system_chance,populated_chance=populated_chance)
+        self.sectorGenerator.populate(system_chance=system_chance,populated_chance=populated_chance,mode=mode)
         pass
     def save_sector(self,src=None):
         if not self.CONF_GEN in self.configs_loaded: self.config_load(self.CONF_GEN)

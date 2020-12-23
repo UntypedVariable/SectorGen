@@ -103,6 +103,7 @@ class Hexgrid:
         self.mode             =      self.config.get("MISC","mode").strip()
         self.system_chance    = int( self.config.get("MISC","system chance"    )  )
         self.populated_chance = int( self.config.get("MISC","populated chance" )  )
+        self.quirk_chance     = int( self.config.get("MISC","quirk chance" )  )
         self.named_ba_chance  = int( self.config.get("MISC","named ba system").strip() )
         # DERIVED
         self.sector_hexes_num=self.subsector_w*self.subsector_h*(self.subsectors_per_quadrant_w+self.subsectors_per_quadrant_h)*self.QUADRANTS_PER_SECTOR
@@ -124,17 +125,20 @@ class Hexgrid:
         self.main_index=[]
         if populated: self.populate()
         pass
-    def populate(self,system_chance=None,populated_chance=None):
+    def populate(self,system_chance=None,populated_chance=None,quirk_chance=None,mode=None):
         if system_chance==None: system_chance=self.system_chance
         if populated_chance==None: populated_chance=self.populated_chance
+        if quirk_chance==None: quirk_chance=self.quirk_chance
         list_star_names=None
         #self.db_names=None #TEST
         if self.db_names!=None: list_star_names=self.db_names[self.TOP_LAYER]['traveller']['stars']['name']
         star_prefixes=("IAS {:04}","PED {:04}")
         used_star_names=[]
         _systems=0
+        mode_parent=mode
         for i in range(self.sector_hexes_num):
-            mode=self.mode
+            if mode_parent == None: mode = self.mode
+            else:                   mode = mode_parent
             starsystem=None
             r_sys=random.randrange(100)
             r_pop=random.randrange(100)
@@ -156,7 +160,7 @@ class Hexgrid:
                         if not name in used_star_names:
                             used_star_names.append(name)
                             break
-                starsystem=self.systemGen(name=name,mode=mode,db_uwp=self.db_uwp,db_esp=self.db_esp)
+                starsystem=self.systemGen(name=name,mode=mode,db_uwp=self.db_uwp,db_esp=self.db_esp,quirk_chance=quirk_chance)
                 starsystem.new()
                 #print( "{:<24} - sys: {:03}/{:03} pop: {:03}/{:03}".format(starsystem.name,r_sys,system_chance,r_pop,populated_chance))
                 _systems+=1

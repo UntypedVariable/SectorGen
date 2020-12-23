@@ -487,93 +487,93 @@
 		</level>
 		<level level="1">
 			<general>Minimal Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD</weapons>
-			<drugs>Highly addictive and dangerous narcotics</drugs>
-			<information>Intellect programs</information>
-			<technology>Dangerous technologies such as nanotechnology</technology>
-			<travellers>Visitors must contact planetary authorities by radio, landing is permitted anywhere</travellers>
+			<weapons>Poison gas, explosives, undetectable weapons and WMD are controlled.</weapons>
+			<drugs>Highly addictive and dangerous narcotics are controlled.</drugs>
+			<information>Intellect programs are controlled.</information>
+			<technology>Dangerous technologies such as nanotechnology are controlled.</technology>
+			<travellers>Visitors must contact planetary authorities by radio, landing is permitted anywhere.</travellers>
 			<powers>Dangerous special powers must be registered.</powers>
 		</level>
 		<level level="2">
 			<general>Low Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles</weapons>
-			<drugs>Highly addictive narcotics</drugs>
-			<information>Dangerous technologies such as nanotechnology, Intrusion programs</information>
-			<technology>Alien/Artifact Technology</technology>
-			<travellers>Visitors must report passenger manifest, landing is permitted anywhere</travellers>
-			<powers>All special powers must be registered; use of dangerous powers forbidden</powers>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles are controlled.</weapons>
+			<drugs>Highly addictive narcotics are controlled.</drugs>
+			<information>Intellect programs and intrusion programs are controlled.</information>
+			<technology>Dangerous technologies such as nanotechnology and Alien/Artifact technology are controlled.</technology>
+			<travellers>Visitors must report passenger manifest, landing is permitted anywhere.</travellers>
+			<powers>All special powers must be registered; use of dangerous powers forbidden.</powers>
 		</level>
 		<level level="3">
 			<general>Mild Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons)</weapons>
-			<drugs>Combat drugs</drugs>
-			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs</information>
-			<technology>TL15+ items</technology>
-			<travellers>Visitors must report passenger manifest, Landing only at starport or other authorized sites</travellers>
-			<powers>All special powers must be registered; use of dangerous powers forbidden, Use of telepathy restricted to government-approved individuals</powers>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons) are controlled.</weapons>
+			<drugs>Addictive narcotics and combat drugs are controlled.</drugs>
+			<information>Intellect programs, intrusion programs and agent programs are controlled.</information>
+			<technology>TL15+ items are controlled.</technology>
+			<travellers>Visitors must report passenger manifest, Landing only at starport or other authorized sites.</travellers>
+			<powers>All special powers must be registered; use of dangerous powers forbidden, Use of telepathy restricted to government-approved individuals.</powers>
 		</level>
 		<level level="4">
 			<general>Modest Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons), Light assault weapons and submachine guns</weapons>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons), Light assault weapons and submachine guns are controlled.</weapons>
 			<drugs>Combat drugs, Addictive narcotics</drugs>
-			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs</information>
-			<technology>TL13+ items</technology>
-			<travellers>Visitors must report passenger manifest, Landing only at starport</travellers>
-			<powers>All special powers must be registered; use of dangerous powers forbidden, Use of telepathy restricted to government-approved individuals, Use of teleportation and clairvoyance restricted</powers>
+			<information>Intellect programs, intrusion programs, agent programs and security programs are controlled.</information>
+			<technology>TL13+ items are controlled.</technology>
+			<travellers>Visitors must report passenger manifest, Landing only at starport.</travellers>
+			<powers>All special powers must be registered; use of dangerous powers forbidden, Use of telepathy restricted to government-approved individuals, Use of teleportation and clairvoyance restricted.</powers>
 		</level>
 		<level level="5">
 			<general>Ordinary Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons), Light assault weapons and submachine guns, Personal concealable weapons</weapons>
-			<drugs>Combat drugs, Addictive narcotics, Anagathics</drugs>
-			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs, Expert programs</information>
-			<technology>TL11+ items</technology>
-			<travellers>Citizens must register offworld travel, visitors must register all business, Landing only at starport</travellers>
-			<powers>All special powers must be registered; Use of all special powers restricted to government specialists</powers>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Heavy weapons, armed vehicles, Portable energy weapons (except ship-mounted weapons), Light assault weapons and submachine guns, Personal concealable weapons are controlled.</weapons>
+			<drugs>Combat drugs, addictive narcotics and anagathics are controlled.</drugs>
+			<information>Intellect programs, intrusion programs, agent programs, security programs and expert programs are controlled.</information>
+			<technology>TL11+ items are controlled.</technology>
+			<travellers>Citizens must register offworld travel, visitors must register all business, Landing only at starport.</travellers>
+			<powers>All special powers must be registered; Use of all special powers restricted to government specialists.</powers>
 		</level>
 		<level level="6">
 			<general>Strict Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD, All firearms (energy included) except shotguns and stunners; carrying weapons strongly discouraged</weapons>
-			<drugs>Combat drugs, Addictive narcotics, Anagathics, Fast and Slow drugs</drugs>
-			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs, Expert programs, Recent news from offworld</information>
-			<technology>TL9+ items</technology>
-			<travellers>Citizens must register offworld travel, visitors must register all business, Landing only at starport, Visits discouraged; excessive contact with citizens forbidden</travellers>
-			<powers>All special powers must be registered; Use of all special powers restricted to government specialists; Possession of power-related drugs banned</powers>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, All firearms (energy included) except shotguns and stunners are controlled; carrying weapons strongly discouraged.</weapons>
+			<drugs>Combat drugs, addictive narcotics, anagathics and fast/slow drugs are controlled.</drugs>
+			<information>Intellect programs, intrusion programs, agent programs, security programs, expert programs and recent news from offworld is controlled.</information>
+			<technology>TL9+ items are controlled.</technology>
+			<travellers>Citizens must register offworld travel, visitors must register all business, Landing only at starport, Visits discouraged; excessive contact with citizens forbidden.</travellers>
+			<powers>All special powers must be registered; Use of all special powers restricted to government specialists; Possession of power-related drugs banned.</powers>
 		</level>
 		<level level="7">
 			<general>Rigorous Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD, Portable energy weapons, ship-mounted weapons, All firearms except stunners; carrying weapons strongly discouraged</weapons>
-			<drugs>Combat drugs, Anagathics, Fast and Slow drugs, All narcotics</drugs>
-			<information>Dangerous technologies such as nanotechnology, Intrusion programs, Agent programs, Security programs, Expert programs, Library programs, unfiltered data about other worlds, free speech curtailed</information>
-			<technology>TL7+ items</technology>
-			<travellers>Visitors must register all business, Landing only at starport, Citizens may not leave planet; visitors may not leave starport</travellers>
-			<powers>All special powers must be registered; Use of special powers forbidden; Possession of power-related drugs banned</powers>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Portable energy weapons, ship-mounted weapons and all firearms except stunners are controlled; carrying weapons strongly discouraged.</weapons>
+			<drugs>Combat drugs, anagathics, fast/slow drugs and all narcotics are controlled.</drugs>
+			<information>Intellect programs, intrusion programs, agent programs, security programs, expert programs, library programs and unfiltered data about other worlds is controlled; Free speech curtailed.</information>
+			<technology>TL7+ items are controlled.</technology>
+			<travellers>Visitors must register all business, Landing only at starport, Citizens may not leave planet; visitors may not leave starport.</travellers>
+			<powers>All special powers must be registered; Use of special powers forbidden; Possession of power-related drugs banned.</powers>
 		</level>
 		<level level="8">
 			<general>Strict Law</general>
-			<weapons>Poison gas, explosives, undetectable weapons, WMD, Portable energy weapons, ship-mounted weapons, All firearms including stunners, All bladed weapons; carrying weapons strongly discouraged</weapons>
-			<drugs>Combat drugs, Anagathics, Fast and Slow drugs, All narcotics, Medicinal drugs</drugs>
-			<information>All Information technology, any non-critical data from offworld, personal media</information>
-			<technology>TL5+ items</technology>
-			<travellers>Landing permitted only to diplomats</travellers>
-			<powers>All special powers must be registered; Power-related technology and equipment banned</powers>
+			<weapons>Poison gas, explosives, undetectable weapons, WMD, Portable energy weapons, ship-mounted weapons, all firearms including stunners and all bladed weapons are controlled; carrying weapons strongly discouraged.</weapons>
+			<drugs>Combat drugs, anagathics, fast/slow drugs, medicinal drugs and all narcotics are controlled.</drugs>
+			<information>All information technology, any non-critical data from offworld and personal media are controlled.</information>
+			<technology>TL5+ items are controlled.</technology>
+			<travellers>Landing permitted only to diplomats.</travellers>
+			<powers>All special powers must be registered; Power-related technology and equipment banned.</powers>
 		</level>
 		<level level="9">
 			<general>Harsh Law</general>
-			<weapons>Any weapons</weapons>
-			<drugs>All drugs</drugs>
-			<information>All Information technology, Any data from offworld, no free press</information>
-			<technology>TL3+ items</technology>
-			<travellers>No offworlders permitted</travellers>
-			<powers>All special powers, and related persons, drugs and equipment</powers>
+			<weapons>All weapons are controlled.</weapons>
+			<drugs>All drugs are controlled.</drugs>
+			<information>All Information technology and any data from offworld is controlled; No free press.</information>
+			<technology>TL3+ items are controlled.</technology>
+			<travellers>No offworlders permitted.</travellers>
+			<powers>All special powers, and related persons, drugs and equipment are controlled.</powers>
 		</level>
 		<level level="10-20">
 			<general>Extreme Law</general>
-			<weapons>Any weapons</weapons>
-			<drugs>All drugs</drugs>
-			<information>All Information technology, Paper media, free speech</information>
-			<technology>TL2+ items</technology>
+			<weapons>All weapons are controlled.</weapons>
+			<drugs>All drugs are controlled.</drugs>
+			<information>All information technology, paper media and free speech are controlled.</information>
+			<technology>TL2+ items are controlled.</technology>
 			<travellers>No offworlders permitted</travellers>
-			<powers>All special powers, and related persons, drugs and equipment</powers>
+			<powers>All special powers, and related persons, drugs and equipment are controlled.</powers>
 		</level>
 	</lawlevels>
 	<techlevels> <!-- src: http://wiki.travellerrpg.com/Tech_Level_Comparison_Chart -->

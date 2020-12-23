@@ -195,7 +195,7 @@ class Planet:
         self.satellites                          = []
         # comment
         self.comment                             = "---"
-    def new(self,from_scratch=True,distFromGZ=None,max_pop=20,max_tl=20):
+    def new(self,from_scratch=True,distFromGZ=None,max_pop=20,max_tl=20,quirk_chance=0):
         if self.isGasGiant:
             self.newCOG(distFromGZ)
             if   self.isGasGiantLarge: self.size=int( self.config.get("GAS GIANTS","size (lgg)") )
@@ -216,7 +216,7 @@ class Planet:
                 self.newSPort()                 # # #
                 self.newExTL(max_tl=max_tl)     # #
                 self.newWDITTP()                #
-            self.newInfo()
+            self.newInfo(quirk_chance)
         pass
     def newCOG(self,distFromGZ=None):
         if self.type=="planet":
@@ -524,11 +524,11 @@ class Planet:
         self.law_level_travellers = max(self.law_level_travellers ,0)
         self.law_level_powers     = max(self.law_level_powers     ,0)
         pass
-    def newInfo(self):
+    def newInfo(self,quirk_chance):
         # travel code
         self.travel_code=" "
-        if   self.atmosphere              >= 10 : self.travel_code="a"
-        if self.population                >   0 \
+        if   self.population              >   0 \
+        and  self.populated                     \
         and (self.government              ==  0 \
         or   self.government              ==  7 \
         or   self.government              == 10 \
@@ -537,17 +537,21 @@ class Planet:
         or   self.law_level_information   >=  9 \
         or   self.law_level_technology    >=  9 \
         or   self.law_level_travellers    >=  9 \
-        or   self.government              ==  0 ): self.travel_code="a"
-        if not self.populated: self.travel_code=" "
+        or   self.government              ==  0 \
+        or   self.atmosphere              >= 10 ):
+            self.travel_code="a"
         self.trade_codes = self.getTradeCodes()
-        if self.population>0 and random.randrange(10)<5: self.quirk = self.getQuirk()
-        else:                                            self.quirk = ""
+        if   self.population>0 \
+        and  quirk_chance<random.randrange(100):
+            self.quirk = self.getQuirk()
+        else:
+            self.quirk = ""
         pass
     def getTradeCodes(self):
         rc  = ''
         from traceback import print_exc
         from sys import argv
-        path   = argv[0][:argv[0].rfind("\\")+1]
+        path          = argv[0][:argv[0].rfind("\\")+1]
         NAME          = 'name'
         TAG           = 'tag'
         SIZE          = 'size'

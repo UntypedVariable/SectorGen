@@ -4,13 +4,25 @@ GENERAL
 
   LEGEND
     isolate HardScifi and SpaceOpera settings in planetgen/systemgen/star/etc
-	
+  
   SYSTEM GEN / HEX
-    add name slot for hexes [done]
+    add name slot for hexes in the system save files
     mainworld-generation
       comment slot
       name slot
-    migrate PBJ-sequence to system
+    mode functionality (from program arguments)
+    migrate PBJ-sequence to system (if not already done)
+    
+  Jump Routes
+    J-1 routes have a starport D+ or Gas giant in every hex
+    J-2 as J-1 routes, but in every other hex
+      --->may add fuel dumps/stations for particularly valuable routes
+        -->add fuel dump and fuel station icon!
+  
+  INSPECTOR
+    complete coding to display the system's star(s)
+    complete coding to display an extended system profile
+    complete coding to display an object on a specific range band
   
   SECTOR GEN
     subsector capital
@@ -20,53 +32,33 @@ GENERAL
                     Ice-Capped
                     Non-Industrial
             ----    ----
-      High Pop		  Agricultural
-      Rich			    Garden
+      High Pop      Agricultural
+      Rich          Garden
                     Water World
+  RESOURCE/HELP
+    add hex explanation
 
 #################
 
-BUGS
-  INSPECTOR
-    says "Rogue World" but the orbit band is (M) for medium
-      seems to be affecting the temperature, too
+KNOWN BUGS
+  --
 
 #################
 
 DRAW
-	System Diagram
-	
+  System Diagram
+
+  VARIANTS
+  trade codes, political
+  
 
 #################
 
 
 far plan:
-	planet maps / world maps
-	--> what kind of projection
-	--> also hexes
+  planet maps / world maps
+  --> what kind of projection
+  --> also hexes
   
 #################
 #################
-
-OLD 
-
-	main drawing script
-		add name slot for hexes
-		~~add Legend to explain colors~~
-		add hex explanation
-		add command explanation on how to inspect a hex
-		###
-		map variants: trade codes, political
-	
-	Jump Routes
-		J-1 routes have a starport D+ or Gas giant in every hex
-		J-2 as J-1 routes, but in every other hex
-		--->may add fuel dumps/stations for particularly valuable routes
-		    -->add fuel dump and fuel station icon!
-
-	Inspector
-	--->
-		after system generation is done
-		amend Inspector to display an extended system profile
-		ex: !t inspect(1010,24)
-			--> inspects hex 1010 at orbit 24

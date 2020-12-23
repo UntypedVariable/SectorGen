@@ -17,9 +17,8 @@ https://github.com/UntypedVariable/SectorGen
 * arguments:
   * `-h`, `--help`
   * `-g`, `--generate`
-  * `-m <vn,so,hs>`, `--mode <vn,so,hs>`
   * `-d`, `--draw`
-  * `-i <hex_location>`, `--inspect <hex_location>`
+  * `-i <hex_location>`, `--inspect=<hex_location>`
 
 ### generate & mode
 
@@ -38,3 +37,11 @@ https://github.com/UntypedVariable/SectorGen
 
 * entering "test" instead of a hex location provides a test-output
 * leading zeroes are required. example: `-i 0101`
+* the inspector can take several arguments
+  * `-v`, `--verbose` provides an extended output
+  * `-s`, `--selection` changes which part of the hex to output
+    * `c`, `complete`: outputs the complete system `!!not yet implemented`
+    * `s`, `star`: outputs information on the system's star(s) `!!terse output only`
+    * `mw`, `mainworld`: outputs information on the system's Mainworld (default)
+    * `b`<n>, `band`<n>: outputs information on a specific object `!!not yet implemented`
+    
